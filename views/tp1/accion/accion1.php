@@ -1,11 +1,10 @@
 <?php
-
-    include_once '../../config/configuracion.php';
+    include_once '../../../config/configuracion.php';
    
     $datoFormulario = data_submitted();
     //verEstructura($datoFormulario);
     
-    $obj_control = new controllersTp1();
+    $obj_control = new Tp1_controller();
 
     if (!empty($datoFormulario)){
         $nro = $datoFormulario['number'];

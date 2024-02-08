@@ -2,122 +2,107 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-
-        <!-- Bootstrap CSS v5.2.1 -->
-        <!-- JQUERY -->
-    <script type="text/javascript" src="..\..\Utiles\jquery-3.6.1\jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-
-
-
+       <?php
+            $title = 'TP1 Ejercicio 6';
+            include_once '../../config/configuracion.php';
+            include_once '../structures/head.php'
+       ?>
     </head>
 
     <body>
-        <?php include_once './structures/header.php';?>
+        <?php include_once '../structures/header.php';?>
         
-        <main>
-            <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
-                <h4>Ejercicio Nro 5</h4>
-                <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
-                    esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
-                    persona es mayor de edad o no; (si la edad es mayor o igual a 18).
-                    Enviar los datos usando el método GET y luego probar de modificar los datos
-                    directamente en la url para ver los dos posibles mensajes.</p>
-
-
-                <form action="./accion/accion6.php" method="get" id="idForm" class="needs-validation" >
-                    <div style="margin-top: 10px;">
-                        <label for="diaSemana">Nombre: </label>
-                        <input type="text" id="idNombre" name="nombre" required/>
+        <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; ">
+            <h4>Ejercicio Nro 6</h4>
+            <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
+                esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
+                persona es mayor de edad o no; (si la edad es mayor o igual a 18).
+                Enviar los datos usando el método GET y luego probar de modificar los datos
+                directamente en la url para ver los dos posibles mensajes.</p>
+            <form action="./accion/accion6.php" class="form" method="post" id="form" name="form" novalidate>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <div class="invalid-feedback">Debe ingresar un nombre</div>
                     </div>
-                    <div style="margin-top: 10px;">
-                        <label for="diaSemana">Apellido: </label>
-                        <input type="text" id="idApellido" name="apellido" required/>
+                    <div class="col">
+                        <label for="lastname" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                        <div class="invalid-feedback">Debe ingresar apellido</div>
                     </div>
-                    <div style="margin-top: 10px;">
-                        <label for="diaSemana">Edad: </label>
-                        <input type="number" id="idEdad" name="edad" required/>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="age" class="form-label">Edad</label>
+                        <input type="number" class="form-control" id="age" name="age" required>
+                        <div class="invalid-feedback">Debe ingresar la edad</div>
                     </div>
-                    <div style="margin-top: 10px;">
-                        <label for="diaSemana">Direccion: </label>
-                        <input type="text" id="idDireccion" name="direccion" required/>
+                    <div class="col">
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="address" name="address" required>
+                        <div class="invalid-feedback">Debe ingresar dirección</div>
                     </div>
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="Sin estudios">
-                      <label class="form-check-label" for="inlineRadio1">Sin estudios</label>
+                </div>
+                <div class = "row mb-4">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="No posee estudios">
+                            <label class="form-check-label" for="inlineRadio1">No posee estudios</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios primarios">
+                            <label class="form-check-label" for="inlineRadio2">Estudios primarios</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios secundarios">
+                            <label class="form-check-label" for="inlineRadio2">Estudios secundarios</label>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios Primarios">
-                      <label class="form-check-label" for="inlineRadio2">Estudio primario</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio3" value="Estudios Secundarios" >
-                      <label class="form-check-label" for="inlineRadio3">Estudio secundario</label>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <label for="">Sexo:</label>
-                        <select  class="form-select form-select-sm w-25" id="selectSexo" name="selectSexo" style="margin-left:10px" aria-label="Default select example">
-                            <option value="Seleccione sexo" selected>Seleccione sexo</option>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <label>Sexo:</label>
+                    <div>
+                        <select  class="form-select" id="selectSexo" name="selectSexo" style="margin-left:10px" aria-label="Default select example" required>
+                            <option selected disabled value="">Selección Genero</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Hombre">Hombre</option>
                             <option value="X">X</option>
                         </select>
+                        <div class="invalid-feedback">Seleccione uno</div>
                     </div>
-
-                    
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox"  name="deporte[]" id="inlineCheckbox1" value="Futbol">
-                      <label class="form-check-label" for="inlineCheckbox1">Futbol</label>
+                   
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Futbol" name="sports[]">
+                            <label class="form-check-label" for="inlineCheckbox1">Futbol</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Basket" name="sports[]">
+                            <label class="form-check-label" for="inlineCheckbox2">Basket</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Tennis" name="sports[]">
+                            <label class="form-check-label" for="inlineCheckbox3">Tennis</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Voley" name="sports[]">
+                            <label class="form-check-label" for="inlineCheckbox4">Voley</label>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" name="deporte[]" id="inlineCheckbox2" value="Basket">
-                      <label class="form-check-label" for="inlineCheckbox2">Basket</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" name="deporte[]" id="inlineCheckbox1" value="Tennis">
-                      <label class="form-check-label" for="inlineCheckbox1">Tennis</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" name="deporte[]" id="inlineCheckbox2" value="Voley">
-                      <label class="form-check-label" for="inlineCheckbox2">Voley</label>
-                    </div>
-                    
+                </div>
+                <div style="margin-top:10px">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
 
+        <script src="./js/ejercicio6Script.js"></script>
 
-                    <div style="margin-top:10px">
-                        <button class="btn btn-primary" type="submit" value="Submit"    >Enviar</button>
-                    </div>
-
-                </form>
-
-                
-            </div>
-        
-            
-        </main>
-        
-        <?php include_once '../structures/footer.php'; ?>
-
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validate@1.19.3/dist/jquery.validate.min.js"></script>
-        <script src="./js/validacionEj6.js"></script>
-    
-
+        <?php include_once '../structures/footer.php';?>
         
     </body>
+
 </html>

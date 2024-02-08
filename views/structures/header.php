@@ -5,16 +5,14 @@
                       Trabajo Practico Nro 1
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="./views/tp1/ej1.php">Ejercicio 1</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej2.php">Ejercicio 2</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej3.php">Ejercicio 3</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej4.php">Ejercicio 4</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej5.php">Ejercicio 5</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej6.php">Ejercicio 6</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej7.php">Ejercicio 7</a></li>
-                      <li><a class="dropdown-item" href="./views/tp1/ej8.php">Ejercicio 8</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">barra divisoria</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej1.php">Ejercicio 1</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej2.php">Ejercicio 2</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej3.php">Ejercicio 3</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej4.php">Ejercicio 4</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej5.php">Ejercicio 5</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej6.php">Ejercicio 6</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej7.php">Ejercicio 7</a></li>
+                      <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp1/ej8.php">Ejercicio 8</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">  

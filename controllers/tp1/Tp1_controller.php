@@ -1,5 +1,5 @@
 <?php
-    class tp1_controller{
+    class Tp1_controller{
         public function ejercicio1 ($nro){
             if ($nro > 0){
                 $resp = "El numero es positivo";

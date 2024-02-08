@@ -14,7 +14,6 @@
 
 
     $PRINCIPAL = "http://" . $_SERVER['HTTP_HOST'] . "/$PROYECT";
-    $DOC_FILE = $PRINCIPAL . "/assets/doc/";
 
     include_once($ROOT . 'utils/funciones.php');
 
