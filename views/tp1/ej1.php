@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
        <?php
-            $title = 'TP1 Ejercicio 6';
+            $title = 'TP1 Ejercicio 1';
             include_once '../../config/configuracion.php';
             include_once '../structures/head.php'
        ?>
@@ -15,7 +15,7 @@
         
         <div>
             <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 400px">
-                <h4>Ejercicio Nro1</h4>
+                <h4>Ejercicio Nro 1</h4>
                 <p > Confeccionar un formulario que solicite un número. Al pulsar el botón de enviar debe
                     llamar a un script –vernumero.php- y visualizar un mensaje que indique si el número
                     enviado fue: positivo, cero o negativo. Añadir un link, a la página que visualiza la

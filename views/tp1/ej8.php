@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php
-            $title = 'TP1 Ejercicio 6';
+            $title = 'TP1 Ejercicio 8';
             include_once '../../config/configuracion.php';
             include_once '../structures/head.php'
         ?>
@@ -13,7 +13,7 @@
         
         <main>
             <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
-                <h4>Ejercicio Nro 5</h4>
+                <h4>Ejercicio Nro 8</h4>
                 <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
                     esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
                     persona es mayor de edad o no; (si la edad es mayor o igual a 18).
