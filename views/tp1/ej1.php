@@ -34,7 +34,7 @@
             </div>
         </div>
         
-        <script src="./js/ejercicio6Script.js"></script>
+        <script src="./js/scriptCamposVacios.js"></script>
 
         <?php include_once '../structures/footer.php';?>
        

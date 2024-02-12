@@ -11,69 +11,71 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <main>
-            <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
-                <h4>Ejercicio Nro 5</h4>
-                <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
-                    esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
-                    persona es mayor de edad o no; (si la edad es mayor o igual a 18).
-                    Enviar los datos usando el método GET y luego probar de modificar los datos
-                    directamente en la url para ver los dos posibles mensajes.</p>
-
-
-                <form action="accion5.php" method="get">
-                    <div style="margin-top: 10px;">
+        <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
+            <h4>Ejercicio Nro 5</h4>
+            <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
+                esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
+                persona es mayor de edad o no; (si la edad es mayor o igual a 18).
+                Enviar los datos usando el método GET y luego probar de modificar los datos
+                directamente en la url para ver los dos posibles mensajes.</p>
+            <form class="form" action="accion5.php" method="post" novalidate>
+                <div class="row">
+                    <div class="col mb-3">
                         <label for="diaSemana">Nombre: </label>
-                        <input type="text" id="idDatos" name="nombre" required/>
+                        <input class="form-control" type="text" id="idDatos" name="nombre" required/>
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div class="col mb-3">
                         <label for="diaSemana">Apellido: </label>
-                        <input type="text" id="idDatos" name="apellido" required/>
+                        <input class="form-control" type="text" id="idDatos" name="apellido" required/>
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div class="col mb-3">
                         <label for="diaSemana">Edad: </label>
-                        <input type="number" id="idDatos" name="edad" required/>
+                        <input class="form-control" type="number" id="idDatos" name="edad" required/>
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div class="col mb-3">
                         <label for="diaSemana">Direccion: </label>
-                        <input type="text" id="idDatos" name="direccion" required/>
+                        <input class="form-control" type="text" id="idDatos" name="direccion" required/>
                     </div>
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="Sin estudios">
-                      <label class="form-check-label" for="inlineRadio1">Sin estudios</label>
+                    
+                    <div class = "row mb-4">
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="No posee estudios">
+                                <label class="form-check-label" for="inlineRadio1">No posee estudios</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios primarios">
+                                <label class="form-check-label" for="inlineRadio2">Estudios primarios</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios secundarios">
+                                <label class="form-check-label" for="inlineRadio2">Estudios secundarios</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios Primarios">
-                      <label class="form-check-label" for="inlineRadio2">Estudio primario</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="estudios" id="inlineRadio3" value="Estudios Secundarios" >
-                      <label class="form-check-label" for="inlineRadio3">Estudio secundario</label>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <label for="">Sexo:</label>
-                        <select  class="form-select form-select-sm w-25" id="selectSexo" name="selectSexo" style="margin-left:10px" aria-label="Default select example">
-                            <option value="Seleccione sexo" selected>Seleccione sexo</option>
+                    
+                    <div class="d-flex justify-content-center mb-4">
+                    <label>Sexo:</label>
+                    <div>
+                        <select  class="form-select" id="selectSexo" name="selectSexo" style="margin-left:10px" aria-label="Default select example" required>
+                            <option selected disabled value="">Selección Genero</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Hombre">Hombre</option>
                             <option value="X">X</option>
                         </select>
+                        <div class="invalid-feedback">Seleccione uno</div>
                     </div>
-
+                   
+                </div>
                     <div style="margin-top:10px">
-                        <button class="btn btn-primary" type="submit" onclick="return validateNumber()">Enviar</button>
+                        <button class="btn btn-primary" type="submit" >Enviar</button>
                     </div>
-
-                </form>
-
-                
-            </div>
-        
+                </div>
+            </form>
             
-        </main>
-        
+        </div>
+
+        <script src="./js/scriptCamposVacios.js"></script>
         <?php include_once '../structures/footer.php'; ?>
 
     </body>
