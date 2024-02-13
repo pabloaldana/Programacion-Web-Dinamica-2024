@@ -20,10 +20,8 @@
                       Trabajo Practico Nro 2
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 4</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp2/ej3.php">Ejercicio 3</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp2/ej4.php">Ejercicio 4</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
