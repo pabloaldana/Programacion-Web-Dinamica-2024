@@ -28,6 +28,20 @@
             }
             return $resp;
         }
+
+        public function cargarArchivoTxt($extension,$carpetaTemporal){
+            //$inf_archivo = pathinfo($nombre);
+            //print_r ($inf_archivo);
+            //$extensionDeArchivo = $inf_archivo['extension'];
+
+            if ($extension === "text/plain") {
+                $contenido = file_get_contents( $carpetaTemporal );
+            }else{
+                $contenido = "ERROR: El archivo enviado no tiene formato texto plano.";
+            }
+            return $contenido;
+
+        }
     }
 
 

@@ -21,8 +21,9 @@
         <div class="container mb-4 border border-2 rounded mt-2 p-2" style="width: 800px">
             <form action="./accion/subirArchivo.php" class="form" method="post" enctype="multipart/form-data" novalidate>
                 <div class="mb-3">
-                    <input class="form-control" type="file" id="miArchivo" name="miArchivo">
+                    <input class="form-control" type="file" id="miArchivo" name="miArchivo" required>
                     <small id="miniaturaHelp" class="form-text text-muted">.doc o .pdf</small>
+                    <div class="invalid-feedback">Seleccione el archivo</div>
                 </div>
                 <button type="submint" class="btn btn-primary">Subir</button>
                 
@@ -31,6 +32,6 @@
         
        
     </div>
-
+    <script src="./js/controlCamposVacios.js"></script>
     <?php include_once '../structures/footer.php'; ?>
 </html>
