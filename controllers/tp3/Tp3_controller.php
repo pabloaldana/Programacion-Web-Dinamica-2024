@@ -42,6 +42,24 @@
             return $contenido;
 
         }
+
+        public function subirPortada($nombre,$carpetaTemporal){
+            $inf_archivo = pathinfo($nombre);
+            $extensionDeArchivo = $inf_archivo['extension'];
+            if (in_array($extensionDeArchivo,$this->EXTENSION_IMG)){
+                $ubicacion = $this->CARPETA . $nombre;
+                if (move_uploaded_file($carpetaTemporal, $ubicacion)) {
+                    $resp =  "Archivo guardado con éxito";
+                } else {
+                    // Ocurrió un error al intentar mover el archivo.
+                    //echo 'Error de PHP: ' . error_get_last()['message'] . "<br />";
+                    $resp = "ERROR al guardar el archivo";
+                }
+            }else{
+                $resp = "ERROR: El formato del archivo no es el permitido";
+            }
+            return $resp;
+        }
     }
 
 
