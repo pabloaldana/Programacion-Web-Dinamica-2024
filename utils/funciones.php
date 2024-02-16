@@ -1,4 +1,5 @@
 <?php
+session_start();
 function data_submitted() {
 
     $_AAux= array();
@@ -40,8 +41,6 @@ spl_autoload_register(function ($class) {
         }
     }
 });
-
-
 
 function verEstructura($e){
     echo "<pre>";
