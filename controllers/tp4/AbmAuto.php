@@ -110,9 +110,9 @@ class AbmAuto{
             $where .=" DniDuenio =".$param['DniDuenio'] . "'";
         }
 
-        echo $where; 
+        //echo $where; aca llega 
         $arreglo = Auto::listar($where); 
-        echo "asdasdsa"; 
+        echo "aca no llega"; 
         //print_r($arreglo);
         return $arreglo;   
         
