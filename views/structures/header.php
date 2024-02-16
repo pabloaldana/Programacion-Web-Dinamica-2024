@@ -39,13 +39,8 @@
                       Trabajo Practico Nro 4
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 4</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 5</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 6</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 7</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp4/index.php">Ejercicio</a></li>
+         
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

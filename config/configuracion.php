@@ -1,12 +1,8 @@
 <?php
 
-    header('Content-Type: text/html; charset=utf-8');
-    header("Cache-Control: no-cache, must-revalidate ");
-
-
     $GLOBALS['ROOT'] = $_SERVER['DOCUMENT_ROOT'];
 
-    //* proyect name
+    //* Nombre de proyecto
     $PROYECT = 'PWD';
 
     //* store the project directory
