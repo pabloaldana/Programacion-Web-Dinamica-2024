@@ -25,7 +25,7 @@ spl_autoload_register(function ($class) {
         $GLOBALS['ROOT'] . 'models/tp2/',
         $GLOBALS['ROOT'] . 'models/tp3/',
         $GLOBALS['ROOT'] . 'models/tp4/',
-        $GLOBALS['ROOT'] . 'models/tp4_models/conector/',
+        $GLOBALS['ROOT'] . 'models/tp4/conector/',
 
         $GLOBALS['ROOT'] . 'controllers/tp1/',
         $GLOBALS['ROOT'] . 'controllers/tp2/',

@@ -3,14 +3,14 @@
         private $patente;
         private $marca;
         private $modelo;
-        private $dniDuenio;
+        private $objDuenio;
         private $mensajeOperacion;
         
         public function __construct() {
             $this->patente = '';
             $this->marca = '';
             $this->$modelo=''; 
-            $this->dniDuenio = '';
+            $this->objDuenio = '';
    
         } 
          /**
@@ -39,32 +39,26 @@
             return $this;
         }
 
-        public function getDniDuenio(){
-            return $this->dniDuenio;
-        }
-        public function setDniDuenio($dniDuenio){
-            $this->dniDuenio = $dniDuenio;
-            return $this;
-        }
+  
         public function getMensajeOperacion(){
             return $this->mensajeOperacion;
-        }
+        }   
         public function setMensajeOperacion($mensajeOperacion){
             $this->mensajeOperacion = $mensajeOperacion;
             return $this;
         }
-        public function setear($patente, $marca, $modelo, $dniDuenio)
+        public function setear($patente, $marca, $modelo, $duenio)
         {
-            $this->setNroDni($dni);
-            $this->setApellido($apellido);
-            $this->setNombre($nombre);
-            $this->setFechaNac($fechaN);
+            $this->setPatente($patente);
+            $this->setMarca($marca);
+            $this->setModelo($modelo);
+            $this->setObjDuenio($duenio);
           
         }
         
         public function cargar(){
             $resp = false;
-            $base=new BaseDatos();
+            $db=new DataBase();
             $sql="SELECT * FROM auto WHERE DniDuenio = ".$this->getDniDuenio();
             if ($db->Iniciar()) {
                 $res = $db->Ejecutar($sql);
@@ -72,7 +66,6 @@
                     if($res>0){
                         $row = $db->Registro();
                         $this->setear($row['DniDuenio'], $row['Patente'],$row['Marca'],$row['Modelo']);
-                        
                     }   
                 }
             } else {
@@ -82,7 +75,7 @@
         }
         public function insertar(){
             $resp = false;
-            $base=new BaseDatos();
+            $db=new DataBase();
             $query = "INSERT INTO Auto(DniDuenio, Patente, Marca, Modelo)  
               VALUES('"
             . $this->getDniDuenio() . "', '"
@@ -90,15 +83,15 @@
             . $this->getMarca() . "', '"
             . $this->getModelo() . "'
             );";
-            if ($base->Iniciar()) {
-                if ($elid = $base->Ejecutar($sql)) {
+            if ($db->Iniciar()) {
+                if ($elid = $db->Ejecutar($sql)) {
                     $this->setNroDni($dni);
                     $resp = true;
                 } else {
-                    $this->setmensajeoperacion("ERROR::Auto->insertar: ".$base->getError());
+                    $this->setmensajeoperacion("ERROR::Auto->insertar: ".$db->getError());
                 }
             } else {
-                $this->setmensajeoperacion("ERROR::Auto->insertar: ".$base->getError());
+                $this->setmensajeoperacion("ERROR::Auto->insertar: ".$db->getError());
             }
             return $resp;
         }
@@ -122,11 +115,8 @@
 
         public static function listar($parameter = "")
         {
-            //echo "aca no llega";
             $arreglo = array();
-            //echo "aca no llega2";
-            $db = new DataBase();
-            echo "aca no llega";
+            $db = new DataBase();   
             
             $query = "SELECT * FROM auto ";
             if ($parameter != "") {
@@ -136,6 +126,7 @@
             if ($res > -1) {
                 if ($res > 0) {
                     while ($row = $db->Registro()) {
+
                         $obj = new Auto();
                         $duenio = new Persona();
                         $duenio->setNroDni($row['DniDuenio']);
@@ -149,7 +140,15 @@
             }
             return $arreglo;
         }
+
        
+        public function getObjDuenio(){
+            return $this->objDuenio;
+        }
+        public function setObjDuenio($objDuenio){
+            $this->objDuenio = $objDuenio;
+            return $this;
+        }
     }
 
 

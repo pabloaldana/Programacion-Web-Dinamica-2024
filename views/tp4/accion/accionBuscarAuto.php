@@ -13,7 +13,15 @@
     if (!empty($datos)){
         $patente = $datos['patente'];
         $parametros = array ('Patente'  => $patente);
-        $autoBuscado = $objAuto -> buscar($parametros); //aca se rompe
+        $autoBuscado = $objAuto -> buscar($parametros);
+
+        if ($autoBuscado){
+            $marca =  $autoBuscado[0]->getMarca();
+            $modelo =  $autoBuscado[0]->getModelo();
+            $objDuenio = $autoBuscado[0]->getObjDuenio();
+            
+            $dniDuenio = $objDuenio->getNroDni();
+        }
     }
 
 ?>
@@ -43,10 +51,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row"><?php ?></th>
-                        <td><?php ?></td>
-                        <td><?php ?></td>
-                        <td><?php ?></td>
+                        <th scope="row"><?php echo $patente?></th>
+                        <td><?php echo $marca?></td>
+                        <td><?php echo $modelo?></td>
+                        <td><?php echo $dniDuenio?></td>
                     </tr>
                 </tbody>
             </table>

@@ -63,20 +63,24 @@
             $this->setNroDni($dni);
             $this->setApellido($apellido);
             $this->setNombre($nombre);
-            $this->setFechaNac($fechaN);
+            $this->setFechaNacimiento($fechaN);
             $this->setTelefono($telef);
             $this->setDomicilio($domic);
         }
         public function cargar(){
             $resp = false;
-            $base=new BaseDatos();
-            $sql="SELECT * FROM persona WHERE id = ".$this->getNroDni();
+            $db=new DataBase();
+            
+            $sql= "SELECT * FROM persona WHERE NroDni = ".$this->getNroDni();
+            //echo  $sql."<br/>";
             if ($db->Iniciar()) {
                 $res = $db->Ejecutar($sql);
+                //echo "asdasdasdjkñ";
                 if($res>-1){
                     if($res>0){
+                        //echo "res>0 ";
                         $row = $db->Registro();
-                        $this->setear($row['NroDni'], $row['Apellido'],$row['Nombre'],$row['fechaNac'],$row['Telefono'],$row['Domicilio']);  
+                        $this->setear($row['NroDni'], $row['Apellido'],$row['Nombre'],$row['fechaNac'],$row['Telefono'],$row['Domicilio']);
                     }   
                 }
             } else {
@@ -86,7 +90,7 @@
         }
         public function insertar(){
             $resp = false;
-            $base=new BaseDatos();
+            $base=new DataBase();
             $query = "INSERT INTO persona(NroDni, Apellido, Nombre, fechaNac, Telefono, Domicilio)  
               VALUES('"
             . $this->getNroDni() . "', '"
@@ -152,6 +156,26 @@
                 $this->setMensajeoperacion("ERROR::persona => listar: " . $db->getError());
             }
             return $personArray;
+        }
+
+        /**
+         * Get the value of mensajeOperacion
+         */ 
+        public function getMensajeOperacion()
+        {
+                return $this->mensajeOperacion;
+        }
+
+        /**
+         * Set the value of mensajeOperacion
+         *
+         * @return  self
+         */ 
+        public function setMensajeOperacion($mensajeOperacion)
+        {
+                $this->mensajeOperacion = $mensajeOperacion;
+
+                return $this;
         }
     }
 ?>
