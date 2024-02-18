@@ -116,31 +116,30 @@
         }
 
         public static function listar($parameter = "")
-        {   
-            
+        {
             $arreglo = array();
-            $db = new DataBase();   
-            
+            $db = new DataBase();
             $query = "SELECT * FROM auto ";
             if ($parameter != "") {
                 $query .= 'WHERE ' . $parameter;
             }
             $res = $db->Ejecutar($query);
+
             if ($res > -1) {
-                if ($res > 0) {   
+                if ($res > 0) {
                     while ($row = $db->Registro()) {
                         $obj = new Auto();
                         $duenio = new Persona();
                         $duenio->setNroDni($row['DniDuenio']);
                         $duenio->cargar();
-   
                         $obj->setear($row['Patente'], $row['Marca'], $row['Modelo'], $duenio);
-                        array_push($arreglo, $obj); 
+                        array_push($arreglo, $obj);
                     }
                 }
             } else {
-                $this->setMensajeoperacion("ERROR::Auto => listar: " . $db->getError());
+                $this->setmensajeoperacion("ERROR::auto => listar: " . $db->getError());
             }
+    
             return $arreglo;
         }
 

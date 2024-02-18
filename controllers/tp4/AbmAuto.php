@@ -105,21 +105,18 @@ class AbmAuto{
      */
     public function buscar($param){
         $where = "";
-        // $patente = $param['Patente'];
-        // echo $patente;
         if ($param !== NULL){
             if  (isset($param['Patente']))
-                $where .=" Patente ='".$param['Patente'] . "'";
+                $where =" Patente ='".$param['Patente'] . "'";
             if  (isset($param['marca']))
-            $where .=" Marca ='".$param['Marca'] . "'";
+            $where =" Marca ='".$param['Marca'] . "'";
             if  (isset($param['modelo']))
-            $where .=" Modelo ='".$param['Modelo'] . "'";
-            if  (isset($param['dniDuenio']))
-            $where .=" DniDuenio ='".$param['DniDuenio'] . "'";
+            $where =" Modelo ='".$param['Modelo'] . "'";
+            if  (isset($param['DniDuenio']))
+            $where =" DniDuenio ='".$param['DniDuenio'] . "'";
         }
-        //echo "buscar de ABMauto";
+
         $arreglo = Auto::listar($where); 
-        
 
         return $arreglo;   
         
