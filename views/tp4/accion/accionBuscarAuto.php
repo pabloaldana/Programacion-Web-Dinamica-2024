@@ -29,7 +29,7 @@
     <html lang="en">
     <head>
         <?php
-            $title = 'TP2 Ejercicio 4';
+            $title = 'TP4 Ejercicio';
             include_once '../../../config/configuracion.php';
             include_once '../../structures/head.php'
         ?>

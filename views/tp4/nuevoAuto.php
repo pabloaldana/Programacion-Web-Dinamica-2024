@@ -35,7 +35,7 @@
                         </div>
                         <div class="mb-3 col">
                             <label for="name" class="form-label">Dni de dueño</label>
-                            <input type="text" class="form-control" id="dniDueno" name="dniDueño" required>
+                            <input type="number" class="form-control" id="dniDuenio" name="dniDuenio" required>
                             <div class="invalid-feedback">Debe ingresar un dni</div>
                         </div>
                     </div>

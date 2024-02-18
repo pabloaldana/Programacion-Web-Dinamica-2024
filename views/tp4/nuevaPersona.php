@@ -17,8 +17,8 @@
                 <form action="./accion/accionNuevaPersona.php" class="form" method="post" id="form" name="form" novalidate>
                     <div class="row mb-4">
                         <div class="col">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
                             <div class="invalid-feedback">Debe ingresar un nombre</div>
                         </div>
                         <div class="col">

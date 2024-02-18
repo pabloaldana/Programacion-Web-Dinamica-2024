@@ -99,7 +99,7 @@ class DataBase extends PDO {
        if(!$resultado){
            $this->analizarDebug();
            $id=0;
-       }else{
+       }else{ 
          $id =  $this->lastInsertId(); 
          if ($id==0){
              $id=-1;

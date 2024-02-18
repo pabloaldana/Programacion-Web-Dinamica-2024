@@ -3,7 +3,7 @@
         private $patente;
         private $marca;
         private $modelo;
-        private $objDuenio;
+        
         private $mensajeOperacion;
         
         public function __construct() {
@@ -76,16 +76,18 @@
         public function insertar(){
             $resp = false;
             $db=new DataBase();
-            $query = "INSERT INTO Auto(DniDuenio, Patente, Marca, Modelo)  
+            $nroPatente = ($this->getObjDuenio())->getNroDni();
+            $query = "INSERT INTO auto(Patente, Marca, Modelo,DniDuenio)  
               VALUES('"
-            . $this->getDniDuenio() . "', '"
             . $this->getPatente() . "', '"
             . $this->getMarca() . "', '"
-            . $this->getModelo() . "'
+            . $this->getModelo() . "', '"             
+            . ($this->getObjDuenio())->getNroDni() . "' 
             );";
+ 
             if ($db->Iniciar()) {
-                if ($elid = $db->Ejecutar($sql)) {
-                    $this->setNroDni($dni);
+                if ($patente = $db->Ejecutar($query)) {
+                    $this->setPatente($patente);
                     $resp = true;
                 } else {
                     $this->setmensajeoperacion("ERROR::Auto->insertar: ".$db->getError());
@@ -114,7 +116,8 @@
         }
 
         public static function listar($parameter = "")
-        {
+        {   
+            
             $arreglo = array();
             $db = new DataBase();   
             
@@ -124,15 +127,15 @@
             }
             $res = $db->Ejecutar($query);
             if ($res > -1) {
-                if ($res > 0) {
+                if ($res > 0) {   
                     while ($row = $db->Registro()) {
-
                         $obj = new Auto();
                         $duenio = new Persona();
                         $duenio->setNroDni($row['DniDuenio']);
                         $duenio->cargar();
+   
                         $obj->setear($row['Patente'], $row['Marca'], $row['Modelo'], $duenio);
-                        array_push($arreglo, $obj);
+                        array_push($arreglo, $obj); 
                     }
                 }
             } else {

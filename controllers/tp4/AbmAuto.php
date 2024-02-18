@@ -11,18 +11,25 @@ class AbmAuto{
     private function cargarObjeto($param){
         $objAuto = null;
            
-        if( array_key_exists('patente',$param)){
+        if( array_key_exists('patente',$param)){ //complear con todos los parametros
             $objAuto = new Auto();
-            $autos = $objAuto->listar("patente = '".$param['patente']."'");
-            $obj->setear(
-                $autos[0]->getPatente(), 
-                $autos[0]->getMarca(),
-                $autos[0]->getModelo(),
-                $autos[0]->getObjetoDuenio(),
+            
+            $persona = new Persona();
+            $persona->setNroDni($param['dniDuenio']);
+
+            $objAuto->setear(
+                $param['patente'], 
+                $param['marca'],
+                $param['modelo'],
+                $persona,
             );
         }
+            
         return $objAuto;
-    }    
+
+    }
+        
+        
      /**
      * permite modificar un objeto
      * @param array $param
@@ -65,7 +72,8 @@ class AbmAuto{
     public function alta($param){
         $resp = false;
         $objtAuto = $this->cargarObjeto($param);
-        if ($objtAuto!=null and $elObjtAuto->insertar()){
+
+        if ($objtAuto!=null and $objtAuto->insertar()){
             $resp = true;
         }
         return $resp;

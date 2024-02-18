@@ -72,13 +72,10 @@
             $db=new DataBase();
             
             $sql= "SELECT * FROM persona WHERE NroDni = ".$this->getNroDni();
-            //echo  $sql."<br/>";
             if ($db->Iniciar()) {
                 $res = $db->Ejecutar($sql);
-                //echo "asdasdasdjkñ";
                 if($res>-1){
                     if($res>0){
-                        //echo "res>0 ";
                         $row = $db->Registro();
                         $this->setear($row['NroDni'], $row['Apellido'],$row['Nombre'],$row['fechaNac'],$row['Telefono'],$row['Domicilio']);
                     }   
@@ -88,30 +85,32 @@
             }
             return $resp;
         }
-        public function insertar(){
+        public function insertar()
+        {
             $resp = false;
-            $base=new DataBase();
+            $db = new DataBase();
             $query = "INSERT INTO persona(NroDni, Apellido, Nombre, fechaNac, Telefono, Domicilio)  
-              VALUES('"
-            . $this->getNroDni() . "', '"
-            . $this->getApellido() . "', '"
-            . $this->getNombre() . "', '"
-            . $this->getfechaNac() . "', '"
-            . $this->getTelefono() . "', '"
-            . $this->getDomicilio() . "'
+                  VALUES('"
+                . $this->getNroDni() . "', '"
+                . $this->getApellido() . "', '"
+                . $this->getNombre() . "', '"
+                . $this->getFechaNacimiento() . "', '"
+                . $this->getTelefono() . "', '"
+                . $this->getDomicilio() . "'
             );";
-            if ($base->Iniciar()) {
-                if ($elid = $base->Ejecutar($sql)) {
+            if ($db->Iniciar()) {
+                if ($dni = $db->Ejecutar($query)) {
                     $this->setNroDni($dni);
                     $resp = true;
                 } else {
-                    $this->setmensajeoperacion("ERROR::Persona->insertar: ".$base->getError());
+                    $this->setmensajeoperacion("ERROR::Persona->insertar ejecutar: " . $db->getError());
                 }
             } else {
-                $this->setmensajeoperacion("ERROR::Persona->insertar: ".$base->getError());
+                $this->setmensajeoperacion("ERROR::Persona->insertar iniciar: " . $db->getError());
             }
             return $resp;
-        }
+        }   
+        
         public function eliminar()
         {
             $resp = false;

@@ -58,6 +58,7 @@ class AbmPersona{
      * @param array $param
      */
     public function alta($param){
+        
         $resp = false;
         $objPersona = $this->cargarObjeto($param);
         if ($objPersona!=null and $objPersona->insertar()){
