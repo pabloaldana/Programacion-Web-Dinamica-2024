@@ -72,7 +72,6 @@
             $db=new DataBase();
             
             $sql= "SELECT * FROM persona WHERE NroDni = ".$this->getNroDni();
-            //echo  $sql."<br>";
             if ($db->Iniciar()) {
                 $res = $db->Ejecutar($sql);
                 if($res>-1){

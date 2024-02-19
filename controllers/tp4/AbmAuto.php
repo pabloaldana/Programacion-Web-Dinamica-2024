@@ -9,11 +9,13 @@ class AbmAuto{
      * @return Auto
      */
     private function cargarObjeto($param){
+    
         $objAuto = null;
         if( array_key_exists('patente',$param)){ //complear con todos los parametros
             $objAuto = new Auto();
             $persona = new Persona();
-            $persona->setNroDni($param['dni']);
+            
+            $persona->setNroDni($param['dniDuenio']);
             $persona->cargar();
             $objAuto->setear(
                 $param['patente'], 
@@ -23,6 +25,7 @@ class AbmAuto{
             );
             
         }
+        verEstructura($objAuto);
         return $objAuto;
 
     }
@@ -63,9 +66,10 @@ class AbmAuto{
      * @param array $param
      */
     public function alta($param){
+ 
         $resp = false;
         $objtAuto = $this->cargarObjeto($param);
-
+        echo "alta de abmAuto";
         if ($objtAuto!=null and $objtAuto->insertar()){
             $resp = true;
         }
