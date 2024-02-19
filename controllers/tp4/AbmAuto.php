@@ -10,21 +10,19 @@ class AbmAuto{
      */
     private function cargarObjeto($param){
         $objAuto = null;
-           
         if( array_key_exists('patente',$param)){ //complear con todos los parametros
             $objAuto = new Auto();
-            
             $persona = new Persona();
-            $persona->setNroDni($param['dniDuenio']);
-
+            $persona->setNroDni($param['dni']);
+            $persona->cargar();
             $objAuto->setear(
                 $param['patente'], 
                 $param['marca'],
                 $param['modelo'],
                 $persona,
             );
-        }
             
+        }
         return $objAuto;
 
     }
@@ -36,16 +34,11 @@ class AbmAuto{
      * @return boolean
      */
     public function modificacion($param){
-        //echo "Estoy en modificacion";
         $resp = false;
         if ($this->seteadosCamposClaves($param)){
-            $elObjtAuto = $this->cargarObjeto($param);
-            
-            $objPersona = new Persona();
-            $objPersona ->setNroDni ($param['dniDuenio']);
-            $objPersona ->cargar();
-
-            $objAuto -> setObjetoDuenio( $objPersona);
+            $objAuto = $this->cargarObjeto($param);
+            //echo "estructura en modificacion";
+            //verEstructura($objAuto);
             if ($objAuto!= null and $objAuto->modificar()){
                 $resp=true;
             }
@@ -78,24 +71,7 @@ class AbmAuto{
         }
         return $resp;
         
-    }
-    /**
-     * permite eliminar un objeto 
-     * @param array $param
-     * @return boolean
-     */
-    // public function baja($param){
-    //     $resp = false;
-    //     if ($this->seteadosCamposClaves($param)){
-    //         $elObjtAuto = $this->cargarObjetoConClave($param);
-    //         if ($elObjtAuto!=null and $elObjtAuto->eliminar()){
-    //             $resp = true;
-    //         }
-    //     }
-        
-    //     return $resp;
-    // }
-    
+    }    
    
     
     /**

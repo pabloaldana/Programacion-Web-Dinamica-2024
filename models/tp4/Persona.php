@@ -72,6 +72,7 @@
             $db=new DataBase();
             
             $sql= "SELECT * FROM persona WHERE NroDni = ".$this->getNroDni();
+            //echo  $sql."<br>";
             if ($db->Iniciar()) {
                 $res = $db->Ejecutar($sql);
                 if($res>-1){
@@ -135,6 +136,7 @@
             if ($parameter != "") {
                 $query .= 'WHERE ' . $parameter;
             }
+            //echo $query;
             $res = $db->Ejecutar($query);
             if ($res > -1) {
                 if ($res > 0) {

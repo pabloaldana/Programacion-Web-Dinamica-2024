@@ -115,6 +115,28 @@
             return $resp;
         }
 
+        public function modificar()
+        {
+
+            $resp = false;
+            $db = new DataBase();
+            $dniDuenio = $this->getObjDuenio()->getNroDni();
+            $patente = $this->getPatente();
+    
+            $query = "UPDATE auto SET Marca='" . $this->getMarca() . "', Modelo='" . $this->getModelo() . "', 
+            DniDuenio='" . $dniDuenio . "' WHERE Patente='" . $this->getPatente() . "'";
+            if ($db->Iniciar()) {
+                if ($db->Ejecutar($query)) {
+                    $resp = true;
+                } else {
+                    $this->setmensajeoperacion("Auto->modificar: " . $db->getError());
+                }
+            } else {
+                $this->setmensajeoperacion("Auto->modificar: " . $db->getError());
+            }
+            return $resp;
+        }
+
         public static function listar($parameter = "")
         {
             $arreglo = array();

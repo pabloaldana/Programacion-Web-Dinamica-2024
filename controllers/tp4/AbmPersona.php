@@ -67,22 +67,6 @@ class AbmPersona{
         return $resp;
         
     }
-    /**
-     * permite eliminar un objeto 
-     * @param array $param
-     * @return boolean
-     */
-    // public function baja($param){
-    //     $resp = false;
-    //     if ($this->seteadosCamposClaves($param)){
-    //         $elObjtAuto = $this->cargarObjetoConClave($param);
-    //         if ($elObjtAuto!=null and $elObjtAuto->eliminar()){
-    //             $resp = true;
-    //         }
-    //     }
-        
-    //     return $resp;
-    // }
     
    
     
@@ -95,7 +79,7 @@ class AbmPersona{
         $where = " true ";
         if ($param<>NULL){
             if  (isset($param['dni']))
-                $where =" NroDni =".$param['dni'] . "'";
+                $where =" NroDni ='".$param['dni'] . "'";
             if  (isset($param['apellido']))
             $where =" Apellido =".$param['apellido'] . "'";
             if  (isset($param['nombre']))
@@ -107,8 +91,11 @@ class AbmPersona{
             if  (isset($param['direccion']))
             $where =" Direccion =".$param['direccion'] . "'";
         }
+        //echo  $where;
         $arreglo = Persona::listar($where);  
+        //verEstructura($arreglo);
         return $arreglo;   
+
     }
 }
 ?>

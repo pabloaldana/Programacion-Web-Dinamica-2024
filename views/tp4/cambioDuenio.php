@@ -14,7 +14,7 @@
         <div class="card mb-3" style="margin:auto;">
             <div class="card-header">Cambiar Dueño</div>
             <div class="card-body">
-                <form action="./accion/accionBuscarAuto.php" method="post" id="form" name="form" class="form" novalidate>
+                <form action="./accion/accionCambioDuenio.php" method="post" id="form" name="form" class="form" novalidate>
                     <div class="mb-3">
                         <label for="">Ingrese la patente</label>
                         <input type="text" class="form-control" id="patente" name="patente" placeholder="Patente" required>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Ingrese el dni </label>
-                        <input type="text" class="form-control" id="patente" name="patente" placeholder="Dni" required>
+                        <input type="number" class="form-control" id="dni" name="dni" placeholder=" Dni" required>
                         <div class="invalid-feedback mb-3">Debe ingresar una patente</div>
                     </div>
                     <button class="btn btn-primary" type="submit">Cambiar</button>    

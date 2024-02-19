@@ -36,7 +36,7 @@
                     echo "<h5 class='text-center mb-4'>Error al guardar el registro.</h5>";
                 }
             ?>
-    </div>
+        </div>
     </div>
 
     <?php include_once '../../structures/footer.php'; ?>
