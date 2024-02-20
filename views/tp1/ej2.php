@@ -20,35 +20,35 @@
                     complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que
                     se cursan por semana.</p>
 
-                <form class="form" name="dias" id="dias" action="./accion/accion2.php" method=post novalidate>
+                <form class="form" name="dias" id="dias" action="./accion/accion2.php" method=get novalidate>
                     <div class="row">
                         <div class ="col mb-3">
                             <label for="diaSemana">Lunes: </label>
-                            <input class="form-control" type="number" id="diaSemana" name="lunes" required>
+                            <input class="form-control" type="number" id="lunes" name="lunes" required>
                             <div class="invalid-feedback">Debe ingresar las horas</div>
                         </div>
                         <div class ="col mb-3">
                             <label for="diaSemana">Martes</label>
-                            <input class="form-control" type="number" id="diaSemana" name="martes" required>
+                            <input class="form-control" type="number" id="martes" name="martes" required>
                             <div class="invalid-feedback">Debe ingresar las horas</div>                           
                         </div>
                         <div class ="col mb-3">
                             <label for="diaSemana">Miercoles </label>
-                            <input class="form-control" type="number" id="diaSemana" name="miercoles" required>
+                            <input class="form-control" type="number" id="miercoles" name="miercoles" required>
                             <div class="invalid-feedback">Debe ingresar las horas</div>
                         </div>
                         <div class ="col mb-3">
                             <label for="diaSemana">Jueves </label>
-                            <input class="form-control" type="number" id="diaSemana" name="jueves" required>
+                            <input class="form-control" type="number" id="jueves" name="jueves" required>
                             <div class="invalid-feedback">Debe ingresar las horas</div>
                         </div>
                         <div class ="col mb-3">
                             <label for="diaSemana">Viernes </label>
-                            <input class="form-control" type="number" id="diaSemana" name="viernes" required>
+                            <input class="form-control" type="number" id="viernes" name="viernes" required>
                             <div class="invalid-feedback">Debe ingresar las horas</div>
                         </div>                    
-                    </div>
-                    <button class="btn btn-primary" name=send id=send type="submit">Enviar</button>
+                    </div> 
+                    <button class="btn btn-primary" type="submit">Enviar</button>
                 </form>
             </div>
         </div>

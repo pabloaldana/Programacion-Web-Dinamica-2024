@@ -2,13 +2,13 @@
     class Tp1_controller{
         public function ejercicio1 ($nro){
             if ($nro > 0){
-                $resp = "El numero es positivo";
+                $resp = "es positivo";
             }
             else{
                 if ($nro < 0) {
-                   $resp= "El numero es negativo"; 
+                   $resp= "es negativo"; 
                 }else{
-                   $resp="Es cero";
+                   $resp="es cero";
                 }
             }
             return $resp;
@@ -19,7 +19,7 @@
             foreach ($claves as $clave) {
                 $suma += $horasDeLaSemana[$clave];
             }
-            return "La suma de las horas es: ".$suma;
+            return $suma;
         }
         public function ejercicio3 ($datos){
             $nombre = $datos['nombre'];
@@ -42,7 +42,7 @@
 
             return "Hola, yo soy $nombre , $apellido tengo $edad años y vivo en $direccion y soy $legal";
         }
-        public function ejercicio5 (){
+        public function ejercicio5 ($datos){
             $legal="";
             $nombre = $datos['nombre'];
             $apellido = $datos['apellido'];
@@ -53,10 +53,24 @@
             else
                 $legal = "menor de edad";
 
-            return "Hola, yo soy $nombre , $apellido tengo $edad años y vivo en $direccion y soy $legal";
+            return "Hola, yo soy $nombre , $apellido tengo $edad años, vivo en $direccion y soy $legal";
         }
-        public function ejercicio6 (){
-            return  "ingreso a ejercicio 60";
+        public function ejercicio6 ($datos){
+            $legal="";
+            $nombre = $datos['nombre'];
+            $apellido = $datos['apellido'];
+            $edad = $datos ['edad'];
+            $direccion = $datos ['direccion'];
+            if ($edad>=18)
+                $legal="mayor de edad";
+            else
+                $legal = "menor de edad";
+
+            $deportes = $datos['sports'];
+            $cantDepotes = count($deportes);
+            
+
+            return "Hola, yo soy $nombre , $apellido tengo $edad años, vivo en $direccion, soy $legal <br/> Practico $cantDepotes deportes.";
         }
         public function ejercicio7 ($datos){
             $nro1 = $datos['numero1'];

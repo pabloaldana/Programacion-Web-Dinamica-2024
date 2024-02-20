@@ -27,20 +27,20 @@
                         <div class="invalid-feedback">Debe ingresar un nombre</div>
                     </div>
                     <div class="col">
-                        <label for="lastname" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
                         <div class="invalid-feedback">Debe ingresar apellido</div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="age" class="form-label">Edad</label>
-                        <input type="number" class="form-control" id="age" name="age" required>
+                        <label for="edad" class="form-label">Edad</label>
+                        <input type="number" class="form-control" id="edad" name="edad" required>
                         <div class="invalid-feedback">Debe ingresar la edad</div>
                     </div>
                     <div class="col">
-                        <label for="address" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="address" name="address" required>
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" required>
                         <div class="invalid-feedback">Debe ingresar dirección</div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <label class="form-check-label" for="inlineRadio2">Estudios primarios</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios secundarios">
+                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio3" value="Estudios secundarios">
                             <label class="form-check-label" for="inlineRadio2">Estudios secundarios</label>
                         </div>
                     </div>

@@ -18,25 +18,25 @@
                 que los reciba y muestre por pantalla un mensaje como el siguiente: “Hola, yo soy
                 nombre , apellido tengo edad años y vivo en dirección”, usando la información recibida.
                 Cambiar el método Post por Get y analizar las diferencias</p>
-            <form class="form" name="datos" id="datos" action="accion3.php" method="post" novalidate>
+            <form class="form" name="datos" id="datos" action="./accion/accion3.php" method="post" novalidate>
                 <div  class="mb-3 row">
                     <div class="col">
                         <label for="diaSemana">Nombre: </label>
-                        <input class="form-control" type="text" id="idDatos" name="nombre" required/>
+                        <input class="form-control" type="text" id="nombre" name="nombre" required/>
                     </div>
                     <div class="col">
                         <label for="diaSemana">Apellido: </label>
-                        <input class="form-control" type="text" id="idDatos" name="apellido" required/>
+                        <input class="form-control" type="text" id="apellido" name="apellido" required/>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <div class="col">
                         <label for="diaSemana">Edad: </label>
-                        <input class="form-control" type="number" id="idDatos" name="edad" required/>
+                        <input class="form-control" type="number" id="edad" name="edad" required/>
                     </div>
                     <div class="col">
                         <label for="diaSemana">Direccion: </label>
-                        <input class="form-control" type="text" id="idDatos" name="direccion" required/>
+                        <input class="form-control" type="text" id="direccion" name="direccion" required/>
                     </div>
                 </div>
 

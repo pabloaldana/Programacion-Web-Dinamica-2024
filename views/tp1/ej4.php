@@ -23,19 +23,19 @@
             <form class="form" action="./accion/accion4.php" method="get" novalidate>
                 <div style="margin-top: 10px;">
                     <label for="diaSemana">Nombre: </label>
-                    <input class="form-control" type="text" id="idDatos" name="nombre" required/>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required/>
                 </div>
                 <div style="margin-top: 10px;">
                     <label for="diaSemana">Apellido: </label>
-                    <input class="form-control" type="text" id="idDatos" name="apellido" required/>
+                    <input class="form-control" type="text" id="apellido" name="apellido" required/>
                 </div>
                 <div style="margin-top: 10px;">
                     <label for="diaSemana">Edad: </label>
-                    <input class="form-control" type="number" id="idDatos" name="edad" required/>
+                    <input class="form-control" type="number" id="edad" name="edad" required/>
                 </div>
                 <div style="margin-top: 10px;">
                     <label for="diaSemana">Direccion: </label>
-                    <input class="form-control" type="text" id="idDatos" name="direccion" required/>
+                    <input class="form-control" type="text" id="direccion" name="direccion" required/>
                 </div>
 
                 <button class="btn btn-primary" type="submit">Enviar</button>

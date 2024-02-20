@@ -13,28 +13,28 @@
         
         <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
             <h4>Ejercicio Nro 5</h4>
-            <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
-                esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
-                persona es mayor de edad o no; (si la edad es mayor o igual a 18).
-                Enviar los datos usando el método GET y luego probar de modificar los datos
-                directamente en la url para ver los dos posibles mensajes.</p>
-            <form class="form" action="accion5.php" method="post" novalidate>
+            <p> Modificar el formulario del ejercicio anterior solicitando, tal que usando componentes
+                “radios buttons” se ingrese el nivel de estudio de la persona: 1-no tiene estudios, 2-
+                estudios primarios, 3-estudios secundarios. Agregar el componente que crea más
+                apropiado para solicitar el sexo. En la página que procesa el formulario mostrar además
+                un mensaje que indique el tipo de estudios que posee y su sexo.</p>
+            <form class="form" action="./accion/accion5.php" method="post" novalidate>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="diaSemana">Nombre: </label>
-                        <input class="form-control" type="text" id="idDatos" name="nombre" required/>
+                        <input class="form-control" type="text" id="nombre" name="nombre" required/>
                     </div>
                     <div class="col mb-3">
                         <label for="diaSemana">Apellido: </label>
-                        <input class="form-control" type="text" id="idDatos" name="apellido" required/>
+                        <input class="form-control" type="text" id="apellido" name="apellido" required/>
                     </div>
                     <div class="col mb-3">
                         <label for="diaSemana">Edad: </label>
-                        <input class="form-control" type="number" id="idDatos" name="edad" required/>
+                        <input class="form-control" type="number" id="edad" name="edad" required/>
                     </div>
                     <div class="col mb-3">
                         <label for="diaSemana">Direccion: </label>
-                        <input class="form-control" type="text" id="idDatos" name="direccion" required/>
+                        <input class="form-control" type="text" id="direccion" name="direccion" required/>
                     </div>
                     
                     <div class = "row mb-4">

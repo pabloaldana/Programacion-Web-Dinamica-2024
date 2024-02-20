@@ -21,7 +21,7 @@
                     directamente en la url para ver los dos posibles mensajes.</p>
 
 
-                <form class="form" action="accion8.php" method="post" novalidate>
+                <form class="form" action="./accion/accion8.php" method="post" novalidate>
                     <div class="row">
                         <div class="col">
                             <label for="diaSemana">Edad: </label>
@@ -45,7 +45,7 @@
                         
                     </div>
                     
-                    <button class="btn btn-primary" type="submit" onclick="return validateNumber()">Enviar</button>
+                    <button class="btn btn-primary" type="submit">Enviar</button>
 
                 </form>
 

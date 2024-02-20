@@ -19,7 +19,7 @@
                 procesa la información se debe mostrar por pantalla la operación seleccionada, cada
                 uno de los operandos y el resultado obtenido de resolver la operación. Ejemplo del
                 formulario:</p>
-            <form class="form" action="accion7.php" method="get" novalidate>
+            <form class="form" action="./accion/accion7.php" method="get" novalidate>
                 <div class="row mb-4">
                     <input type="number" id="numero1" name="numero1" class="form-control col" placeholder="Ingrese un numero" required/>
                     <select  class="form-select col" name="operador" aria-label="Default select example" required>
