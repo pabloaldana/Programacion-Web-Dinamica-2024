@@ -11,16 +11,20 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <div>
-            <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red">
-                <h4>Ejercicio Nro 2</h4>
-                <p> Crear una página php que contenga un formulario HTML que permita ingresar las horas
-                    de cursada, de la materia Programación Web Dinámica, por cada día de la semana.
-                    Enviar los datos del formulario por el método Get a otra página php que los reciba y
-                    complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que
-                    se cursan por semana.</p>
-
-                <form class="form" name="dias" id="dias" action="./accion/accion2.php" method=get novalidate>
+        <div class = "container" style= "width: 700px">
+    <div class="card text-center">
+        <div class="card-header">
+            Trabajo Practico Nro 1
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ejercicio 2</h5>
+            <p class="card-text">
+            Crear una página php que contenga un formulario HTML que permita ingresar las horas
+            de cursada, de la materia Programación Web Dinámica, por cada día de la semana.
+            Enviar los datos del formulario por el método Get a otra página php que los reciba y
+            complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que
+            se cursan por semana</p>
+              <form class="form" name="dias" id="dias" action="./accion/accion2.php" method=get novalidate>
                     <div class="row">
                         <div class ="col mb-3">
                             <label for="diaSemana">Lunes: </label>
@@ -50,11 +54,13 @@
                     </div> 
                     <button class="btn btn-primary" type="submit">Enviar</button>
                 </form>
-            </div>
         </div>
+    </div>
+</div>
 
         <script src="./js/scriptCamposVacios.js"></script>
         <?php include_once '../structures/footer.php'; ?>
 
     </body>
 </html>
+

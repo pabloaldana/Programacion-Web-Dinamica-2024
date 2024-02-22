@@ -12,36 +12,40 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; ">
-            <h4>Ejercicio Nro 6</h4>
-            <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
-                esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
-                persona es mayor de edad o no; (si la edad es mayor o igual a 18).
-                Enviar los datos usando el método GET y luego probar de modificar los datos
-                directamente en la url para ver los dos posibles mensajes.</p>
-            <form action="./accion/accion6.php" class="form" method="post" id="form" name="form" novalidate>
-                <div class="row mb-4">
-                    <div class="col">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                        <div class="invalid-feedback">Debe ingresar un nombre</div>
+        <div class = "container" style= "width: 700px">
+    <div class="card text-center">
+        <div class="card-header">
+            Trabajo Practico Nro 1
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ejercicio 6</h5>
+            <p class="card-text">
+            Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
+            esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
+            persona es mayor de edad o no; (si la edad es mayor o igual a 18).
+            Enviar los datos usando el método GET y luego probar de modificar los datos
+            directamente en la url para ver los dos posibles mensajes.</p>
+            <form class="form" action="./accion/accion4.php" method="get" novalidate>
+
+                <div class="row">
+                    <div class= "col">
+                        <label for="diaSemana">Nombre: </label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" required/>
                     </div>
-                    <div class="col">
-                        <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" required>
-                        <div class="invalid-feedback">Debe ingresar apellido</div>
+                    <div class= "col">
+                        <label for="diaSemana">Apellido: </label>
+                        <input class="form-control" type="text" id="apellido" name="apellido" required/>
                     </div>
+
                 </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <label for="edad" class="form-label">Edad</label>
-                        <input type="number" class="form-control" id="edad" name="edad" required>
-                        <div class="invalid-feedback">Debe ingresar la edad</div>
+                <div class="row">
+                    <div class= "col">
+                        <label for="diaSemana">Edad: </label>
+                        <input class="form-control" type="number" id="edad" name="edad" required/>
                     </div>
-                    <div class="col">
-                        <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" required>
-                        <div class="invalid-feedback">Debe ingresar dirección</div>
+                    <div class= "col">
+                        <label for="diaSemana">Direccion: </label>
+                        <input class="form-control" type="text" id="direccion" name="direccion" required/>
                     </div>
                 </div>
                 <div class = "row mb-4">
@@ -55,7 +59,7 @@
                             <label class="form-check-label" for="inlineRadio2">Estudios primarios</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio3" value="Estudios secundarios">
+                            <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios secundarios">
                             <label class="form-check-label" for="inlineRadio2">Estudios secundarios</label>
                         </div>
                     </div>
@@ -71,9 +75,8 @@
                         </select>
                         <div class="invalid-feedback">Seleccione uno</div>
                     </div>
-                   
-                </div>
-                <div class="row mb-4">
+                    </div>
+                    <div class="row mb-4">
                     <div class="col">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Futbol" name="sports[]">
@@ -93,11 +96,14 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-top:10px">
-                    <button class="btn btn-primary" type="submit">Enviar</button>
+                    <div style="margin-top:10px">
+                        <button class="btn btn-primary" type="submit" >Enviar</button>
+                    </div>
                 </div>
             </form>
         </div>
+    </div>
+</div>
 
         <script src="./js/scriptCamposVacios.js"></script>
         <?php include_once '../structures/footer.php';?>
@@ -105,3 +111,4 @@
     </body>
 
 </html>
+

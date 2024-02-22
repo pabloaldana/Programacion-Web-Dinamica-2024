@@ -11,20 +11,26 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <main>
-            <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
-                <h4>Ejercicio Nro 8</h4>
-                <p> Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
+        <div class = "container" style= "width: 700px">
+    <div class="card text-center">
+        <div class="card-header">
+            Trabajo Practico Nro 1
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ejercicio 8</h5>
+            <p class="card-text">
+            Modificar el formulario del ejercicio anterior para que usando la edad solicitada, enviar
                     esos datos a otra página en donde se muestren mensajes distintos dependiendo si la
                     persona es mayor de edad o no; (si la edad es mayor o igual a 18).
                     Enviar los datos usando el método GET y luego probar de modificar los datos
                     directamente en la url para ver los dos posibles mensajes.</p>
-
-
-                <form class="form" action="./accion/accion8.php" method="post" novalidate>
+                    <form class="form" action="./accion/accion8.php" method="post" novalidate>
                     <div class="row">
                         <div class="col">
                             <label for="diaSemana">Edad: </label>
+                       
+                        </div>
+                        <div class="col">
                             <input class="form-control" type="number" id="idDatos" name="edad" required/>
                         </div>
 
@@ -44,18 +50,13 @@
                         </div>
                         
                     </div>
-                    
-                    <button class="btn btn-primary" type="submit">Enviar</button>
-
-                </form>
-
-                
-            </div>
-        
-            
-        </main>
+            </form>
+        </div>
+    </div>
+</div> 
         
         <?php include_once '../structures/footer.php'; ?>
    
     </body>
 </html>
+

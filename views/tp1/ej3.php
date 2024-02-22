@@ -11,13 +11,19 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <div class="container py-5 text-center mt-5 mb-5" style="border:2px solid red; height: 500px">
-            <h4>Ejercicio Nro 3</h4>
-            <p> Crear una página php que contenga un formulario HTML como el que se indica en la
-                imagen (darle formato con CSS), enviar estos datos por el método Post a otra página php
-                que los reciba y muestre por pantalla un mensaje como el siguiente: “Hola, yo soy
-                nombre , apellido tengo edad años y vivo en dirección”, usando la información recibida.
-                Cambiar el método Post por Get y analizar las diferencias</p>
+        <div class = "container" style= "width: 700px">
+    <div class="card text-center">
+        <div class="card-header">
+            Trabajo Practico Nro 1
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ejercicio 3</h5>
+            <p class="card-text">
+            Crear una página php que contenga un formulario HTML como el que se indica en la
+            imagen (darle formato con CSS), enviar estos datos por el método Post a otra página php
+            que los reciba y muestre por pantalla un mensaje como el siguiente: “Hola, yo soy
+            nombre , apellido tengo edad años y vivo en dirección”, usando la información recibida.
+            Cambiar el método Post por Get y analizar las diferencias</p>
             <form class="form" name="datos" id="datos" action="./accion/accion3.php" method="post" novalidate>
                 <div  class="mb-3 row">
                     <div class="col">
@@ -43,9 +49,12 @@
                 <button class="btn btn-primary" type="submit">Enviar</button>
             </form>
         </div>
+    </div>
+</div>  
         
         <script src="./js/scriptCamposVacios.js"></script>
         <?php include_once '../structures/footer.php'; ?>
     
     </body>
 </html>
+
