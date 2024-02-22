@@ -10,7 +10,7 @@
 
 
     $PRINCIPAL = "http://" . $_SERVER['HTTP_HOST'] . "/$PROYECT";
-    $DOC_FILE = $PRINCIPAL . "/view/tp3/cargas/";
+    $DOC_FILE = $PRINCIPAL . "/views/tp3/cargas/";
 
     include_once($ROOT . 'utils/funciones.php');
 

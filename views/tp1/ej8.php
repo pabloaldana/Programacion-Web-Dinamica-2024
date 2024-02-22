@@ -11,7 +11,7 @@
     <body>
         <?php include_once '../structures/header.php';?>
         
-        <div class = "container" style= "width: 700px">
+        <div class = "container mt-3" style= "width: 700px">
     <div class="card text-center">
         <div class="card-header">
             Trabajo Practico Nro 1

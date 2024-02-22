@@ -22,10 +22,7 @@
        
         $nombre = $_FILES["miArchivo"]["name"];
         $rutaTemporal = $_FILES["miArchivo"]["tmp_name"];
-
         $respuesta = $obj_tp3->subirPortada($nombre,$rutaTemporal);
-        //echo $respuesta;
-        //echo $dir.$nombre;
     }
     
 
@@ -41,8 +38,7 @@
             ?>
     </head>
     <div class="card mb-3">
-        //!CONSULTARLE ANACHO POR LA IMG PARA PONER LA DIRECCION
-        <img src="<?php $DOC_FILE.$nombre ?>" class="card-img-top" alt="...">
+        <img src="<?php echo $DOC_FILE.$nombre ?>"  alt="..." width="300px">
         <div class="card-body">
             <h5 class="card-title">La pelicula introducida es</h5>
             <b class="card-text text-success">Titulo: </b><?php echo $titulo ?><br>

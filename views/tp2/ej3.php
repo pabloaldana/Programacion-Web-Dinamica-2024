@@ -11,9 +11,14 @@
 
     <?php include_once '../structures/header.php';?>
 
-    <div class="container py-5 texte-center mt-5 mb-5" style="border: 2px solid red;">
-        <h4>Ejercicio Nro 3</h4>
-        <p>
+    <div class = "container" style= "width: 700px">
+    <div class="card text-center">
+        <div class="card-header">
+            Trabajo Practico Nro 2
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ejercicio 3</h5>
+            <p class="card-text">
             Crear una nueva página php con un formulario HTML de login en la que solicitan el usuario
             y la password para loguearse. Los datos del formulario son enviados a un script
             verificaPass.php en el que contienen un arreglo asociativo por cada usuario del sistema. El
@@ -24,36 +29,33 @@
             usuario y la contraseña antes de ser enviados al servidor sino que también debe
             realizar un control de contraseña segura (La contraseña debe tener como mínimo 8
             caracteres, no puede ser igual que el nombre de usuario ingresado y debe contener
-            letras y números).
-        </p>
-        <!-- Formulario -->
-        <div class="container border border-2 rounded mt-2 mb-3 " style="width: 500px;">
-            <div class="d-flex justify-content-center m-3">
-                <h2 class="text-center">Member Login</h2>
-            </div>
-            <div>
-                <form class="form " action="./accion/verificarPass.php" method="post" novalidate>
-                    <div>
-                        <input class="col-12 form-control" type="text" id="usuario" name="usuario" placeholder="Username" required>
-                        <div class="invalid-feedback">Ingrese usuario</div>
-                    </div>
-                    <div>
-                        <input class="col-12 form-control" type="text" id="clave" name="clave" placeholder="Password" required>
-                    </div>
-                    <div><span id="error-user-password"></span></div>
-                    <div><span id="error-password"></span></div>
-                    <div>
-                        <button class="btn btn-success col-12" type="submit">Login</button>
-                    </div>
-                        
-                        
+            letras y números).</p>
+            <div class = "container" style="width: 400px; margin: auto;">   
+                <div class="d-flex">
+                    <button type="button" class="btn-close mr-auto" disabled aria-label="Close"></button>
+                </div>
 
-                </form>
+                <div class="d-flex justify-content-center m-3">
+                    <h2 class="text-center">Member Login</h2>
+                </div>
+                    <form class="form " action="./accion/verificarPass.php" method="post" novalidate>
+                        <div>
+                            <input class="col-12 form-control" type="text" id="usuario" name="usuario" placeholder="Username" required>
+                            <div class="invalid-feedback">Ingrese usuario</div>
+                        </div>
+                        <div>
+                            <input class="col-12 form-control" type="text" id="clave" name="clave" placeholder="Password" required>
+                        </div>
+                        <div><span id="error-user-password"></span></div>
+                        <div><span id="error-password"></span></div>
+                        <div>
+                            <button class="btn btn-success col-12" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+           
         </div>
-        
-       
-
     </div>
     
     <script src="./js/validacionEj3.js"></script>
@@ -61,3 +63,5 @@
 
 
 </html>
+
+
