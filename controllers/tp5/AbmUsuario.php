@@ -90,8 +90,8 @@ class AbmUsuario
             if (isset($param['usDeshabilitado']))
                 $where[] = " usDeshabilitado = '" . $param['usDeshabilitado'] . "'";
         }
+        verEstructura($where);
         $whereClause = implode(" AND ", $where);
-
         $arreglo = Usuario::listar($whereClause);
         return $arreglo;
     }

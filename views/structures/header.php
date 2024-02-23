@@ -48,14 +48,8 @@
                       Trabajo Practico Nro 5
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 4</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 5</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 6</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 7</a></li>
-                        <li><a class="dropdown-item" href="#">Ejercicio 8</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $PRINCIPAL?>/views/tp5/index.php">Ejercicio 4.1</a></li>
+
                     </ul>
                 </li>
                 

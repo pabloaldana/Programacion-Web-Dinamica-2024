@@ -26,11 +26,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['ROOT'] . 'models/tp3/',
         $GLOBALS['ROOT'] . 'models/tp4/',
         $GLOBALS['ROOT'] . 'models/tp4/conector/',
+        $GLOBALS['ROOT'] . 'models/tp5/',
+        $GLOBALS['ROOT'] . 'models/tp5/conector/',
 
         $GLOBALS['ROOT'] . 'controllers/tp1/',
         $GLOBALS['ROOT'] . 'controllers/tp2/',
         $GLOBALS['ROOT'] . 'controllers/tp3/',
         $GLOBALS['ROOT'] . 'controllers/tp4/',
+        $GLOBALS['ROOT'] . 'controllers/tp5/',
 
         $_SESSION['ROOT'] . 'views/',
     );

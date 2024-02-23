@@ -60,15 +60,17 @@
 
        
         public function setear($idUsuario, $usNombre, $usPass, $usMail, $usDeshabilitado){
+           
             $this->setIdUsuario($idUsuario);
             $this->setUsNombre($usNombre);
             $this->setUsPass($usPass);
             $this->setUsMail($usMail);
             $this->setUsDeshabilitado($usDeshabilitado);
+     
         }
         public function cargar(){
             $resp = false;
-            $db=new DataBase();
+            $db=new DataBaseTp5();
             
             $sql= "SELECT * FROM usuario WHERE IdUsuario = ".$this->getIdUsuario();
             if ($db->Iniciar()) {
@@ -87,7 +89,7 @@
         public function insertar()
         {
             $resp = false;
-            $db = new DataBase();
+            $db = new DataBaseTp5();
             $query = "INSERT INTO usuario(IdUsuario, UsNombre, UsPass, UsMail, UsDeshabilitado)  
                   VALUES('"
                 . $this->getIdUsuario() . "', '"
@@ -111,7 +113,7 @@
         public function eliminar()
         {
             $resp = false;
-            $db = new DataBase();
+            $db = new DataBaseTp5();
             $query = "DELETE FROM usuario WHERE IdUsuario=" . $this->getIdUsuario();
             if ($db->Iniciar()) {
                 if ($db->Ejecutar($query)) {
@@ -126,31 +128,37 @@
         }
         public static function listar($parameter = "")
         {
-            $usuariorray = array();
-            $db = new DataBase();
+            $usuarioArray = array();
+            $db = new DataBaseTp5();
             $query = "SELECT * FROM usuario ";
             if ($parameter != "") {
                 $query .= 'WHERE ' . $parameter;
             }
+            //echo $query."<br/>";
             $res = $db->Ejecutar($query);
+            //echo"1 <br/>";
             if ($res > -1) {
+                //echo"2 <br/>";
                 if ($res > 0) {
+                    //echo"3 <br/>";
                     while ($row = $db->Registro()) {
+                        //echo"4 <br/>";
                         $obj = new Usuario();
                         $obj->setear(
-                            $row['IdUsuario'],
-                            $row['UsNombre'],
-                            $row['UsPass'],
-                            $row['UsMail'],
-                            $row['UsDeshabilitado'],
+                            $row['idUsuario'],
+                            $row['usNombre'],
+                            $row['usPass'],
+                            $row['usMail'],
+                            $row['usDeshabilitado'],
                         );
+   
                         array_push($usuarioArray, $obj);
                     }
                 }
             } else {
                 $this->setMensajeoperacion("ERROR::usuario => listar: " . $db->getError());
             }
-            return $usurioArray;
+            return $usuarioArray;
         }
         //falta la funcion deshabilitar
         public function modificar(){

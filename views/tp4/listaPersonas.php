@@ -27,7 +27,7 @@
     <div class="container">
         <div>
             <table class="table caption-top">
-                <caption>Lista de Personas</caption>
+                <caption>Lista de Usuarios</caption>
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>

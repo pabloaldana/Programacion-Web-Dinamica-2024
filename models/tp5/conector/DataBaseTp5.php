@@ -1,6 +1,6 @@
 <?php
 
-class DataBase extends PDO {
+class DataBaseTp5 extends PDO {
     
     private $engine;
     private $host;
@@ -17,7 +17,7 @@ class DataBase extends PDO {
     public function __construct(){
         $this->engine = 'mysql';
         $this->host = '127.0.0.1';
-        $this->database = 'infoautos';
+        $this->database = 'usuariorol';
         $this->user = 'root';
         $this->pass = '';
         $this->debug = true;
