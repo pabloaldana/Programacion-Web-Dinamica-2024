@@ -11,7 +11,6 @@
         $hayUsuarios = true;
     }
 ?>
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -51,7 +50,7 @@
                                 echo "<td>" . $usuario->getUsDeshabilitado(). "</td>";
                                 echo "<td class='text-center'> 
                                 <a href='./accion/actualizarLogin.php?idUsuario=".$usuario->getIdUsuario()."&usDeshabilitado=".$usuario->getUsDeshabilitado()."' class='btn btn-text btn-primary ml-2'>Actualizar</a>
-                                <a href='./accion/eliminarLogin.php' class='btn btn-text btn-danger ml-2'>Eliminar</a>
+                                <a href='./accion/eliminarLogin.php?idUsuario=".$usuario->getIdUsuario()."&usDeshabilitado=".$usuario->getUsDeshabilitado()."' class='btn btn-text btn-danger ml-2".($usuario->getUsDeshabilitado()?' disabled':'')." '>Eliminar</a>
                                 </td>";
                                 echo "</tr>"; 
                                 echo "</tbody>";

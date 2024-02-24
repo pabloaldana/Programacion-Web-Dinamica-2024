@@ -102,11 +102,13 @@ class AbmUsuario
     {
         $resp = false;
         if ($this->seteadosCamposClaves($param)) {
-            $personObject = $this->cargarObjetoConClave($param);
-            if ($personObject != null and $personObject->deshabilitar()) {
+            $objPersona = $this->cargarObjetoConClave($param);
+            verEstructura($objPersona);
+            if ($objPersona != null and $objPersona->deshabilitar()) {
                 $resp = true;
             }
         }
+        //hasta aca llega bien
         return $resp;
     }
 }

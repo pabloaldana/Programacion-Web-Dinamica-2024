@@ -157,34 +157,53 @@
         }
         //falta la funcion deshabilitar
         public function modificar()
-    {
-        $resp = false;
-        $db = new DataBaseTp5();
+        {
+            $resp = false;
+            $db = new DataBaseTp5();
 
-        $query = "UPDATE usuario SET 
-            usNombre='" . $this->getUsNombre() . "', 
-            usPass='" . $this->getUsPass() . "', 
-            usMail='" . $this->getUsMail() . "'";
+            $query = "UPDATE usuario SET 
+                usNombre='" . $this->getUsNombre() . "', 
+                usPass='" . $this->getUsPass() . "', 
+                usMail='" . $this->getUsMail() . "'";
 
-        $usDeshabilitado = $this->getUsDeshabilitado();
+            $usDeshabilitado = $this->getUsDeshabilitado();
 
-        if ($usDeshabilitado !== 'null') {
-            $query .= ", usDeshabilitado='" . $usDeshabilitado . "'";
-        }
-
-        $query .= " WHERE idUsuario=" . $this->getIdUsuario();
-
-        if ($db->Iniciar()) {
-            if ($db->Ejecutar($query)) {
-                $resp = true;
-            } else {
-                $this->setMensajeoperacion("ERROR::Usuario => modificar ejecutar: " . $db->getError());
+            if ($usDeshabilitado !== 'null') {
+                $query .= ", usDeshabilitado='" . $usDeshabilitado . "'";
             }
-        } else {
-            $this->setMensajeoperacion("ERROR::Usuario => modificar insertar: " . $db->getError());
+
+            $query .= " WHERE idUsuario=" . $this->getIdUsuario();
+
+            if ($db->Iniciar()) {
+                if ($db->Ejecutar($query)) {
+                    $resp = true;
+                } else {
+                    $this->setMensajeoperacion("ERROR::Usuario => modificar ejecutar: " . $db->getError());
+                }
+            } else {
+                $this->setMensajeoperacion("ERROR::Usuario => modificar insertar: " . $db->getError());
+            }
+            return $resp;
         }
-        return $resp;
-    }
+        public function deshabilitar()
+        {
+            $resp = false;
+            $db = new DataBaseTp5();
+            $newDate = date('Y-m-d H:i:s');
+            $query = "UPDATE usuario SET 
+                usDeshabilitado='" . $newDate . "' WHERE idUsuario=" . $this->getIdUsuario();
+    
+            if ($db->Iniciar()) {
+                if ($db->Ejecutar($query)) {
+                    $resp = true;
+                } else {
+                    $this->setMensajeoperacion("ERROR::Usuario => deshabilitar ejecutar: " . $db->getError());
+                }
+            } else {
+                $this->setMensajeoperacion("ERROR::Usuario => deshabilitar insertar: " . $db->getError());
+            }
+            return $resp;
+        }
         
     }
 ?>
