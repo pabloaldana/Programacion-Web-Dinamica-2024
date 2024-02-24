@@ -61,8 +61,11 @@ class AbmUsuario
     public function modificacion($param)
     {
         $resp = false;
+     
         if ($this->seteadosCamposClaves($param)) {
+            
             $personObject = $this->cargarObjeto($param);
+
             if ($personObject != null and $personObject->modificar()) {
                 $resp = true;
             }
@@ -90,7 +93,6 @@ class AbmUsuario
             if (isset($param['usDeshabilitado']))
                 $where[] = " usDeshabilitado = '" . $param['usDeshabilitado'] . "'";
         }
-        verEstructura($where);
         $whereClause = implode(" AND ", $where);
         $arreglo = Usuario::listar($whereClause);
         return $arreglo;

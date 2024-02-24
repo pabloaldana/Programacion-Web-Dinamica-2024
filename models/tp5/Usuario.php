@@ -134,15 +134,10 @@
             if ($parameter != "") {
                 $query .= 'WHERE ' . $parameter;
             }
-            //echo $query."<br/>";
             $res = $db->Ejecutar($query);
-            //echo"1 <br/>";
             if ($res > -1) {
-                //echo"2 <br/>";
                 if ($res > 0) {
-                    //echo"3 <br/>";
                     while ($row = $db->Registro()) {
-                        //echo"4 <br/>";
                         $obj = new Usuario();
                         $obj->setear(
                             $row['idUsuario'],
@@ -161,22 +156,35 @@
             return $usuarioArray;
         }
         //falta la funcion deshabilitar
-        public function modificar(){
-            $resp = false;
-            $sql="UPDATE usuario SET usnombre='".$this->getusnombre()."' ,uspass='".$this->getuspass()."',usmail='".$this->getusmail()."' ,usdeshabilitado='".$this->getusdeshabilitado()."'  ".
-                " WHERE idusuario=".$this->getidusuario();
-            if ($this->Iniciar()) {
-                echo $sql;
-                if ($this->Ejecutar($sql)) {
-                    $resp = true;
-                } else {
-                    $this->setmensajeoperacion("Especie->modificar: ".$this->getError());
-                }
-            } else {
-                $this->setmensajeoperacion("Especie->modificar: ".$this->getError());
-            }
-            return $resp;
+        public function modificar()
+    {
+        $resp = false;
+        $db = new DataBaseTp5();
+
+        $query = "UPDATE usuario SET 
+            usNombre='" . $this->getUsNombre() . "', 
+            usPass='" . $this->getUsPass() . "', 
+            usMail='" . $this->getUsMail() . "'";
+
+        $usDeshabilitado = $this->getUsDeshabilitado();
+
+        if ($usDeshabilitado !== 'null') {
+            $query .= ", usDeshabilitado='" . $usDeshabilitado . "'";
         }
+
+        $query .= " WHERE idUsuario=" . $this->getIdUsuario();
+
+        if ($db->Iniciar()) {
+            if ($db->Ejecutar($query)) {
+                $resp = true;
+            } else {
+                $this->setMensajeoperacion("ERROR::Usuario => modificar ejecutar: " . $db->getError());
+            }
+        } else {
+            $this->setMensajeoperacion("ERROR::Usuario => modificar insertar: " . $db->getError());
+        }
+        return $resp;
+    }
         
     }
 ?>

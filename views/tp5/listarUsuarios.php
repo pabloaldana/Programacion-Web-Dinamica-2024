@@ -5,14 +5,12 @@
    
     $listaUsuarios = $objUsuario -> buscar(null);
 
-    verEstructura($listaUsuarios);
+    //verEstructura($listaUsuarios);
     $hayUsuarios = false;
     if(count($listaUsuarios)>0){
         $hayUsuarios = true;
     }
 ?>
-
-
 
 <!DOCTYPE html>
     <html lang="en">
@@ -52,8 +50,8 @@
                                 echo "<td>" . $usuario->getUsMail(). "</td>";
                                 echo "<td>" . $usuario->getUsDeshabilitado(). "</td>";
                                 echo "<td class='text-center'> 
-                                <button type='button' class='btn btn-text btn-primary ml-2'>Actualizar</button>
-                                <button type='button' class='btn btn-text btn-danger ml-2'>Eliminar</button>
+                                <a href='./accion/actualizarLogin.php?idUsuario=".$usuario->getIdUsuario()."&usDeshabilitado=".$usuario->getUsDeshabilitado()."' class='btn btn-text btn-primary ml-2'>Actualizar</a>
+                                <a href='./accion/eliminarLogin.php' class='btn btn-text btn-danger ml-2'>Eliminar</a>
                                 </td>";
                                 echo "</tr>"; 
                                 echo "</tbody>";
@@ -63,6 +61,6 @@
         </div>
     </div>
 
-    <?php include_once '../../structures/footer.php';?>
+    <?php include_once '../structures/footer.php';?>
 
 </html>

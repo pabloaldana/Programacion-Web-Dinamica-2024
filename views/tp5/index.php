@@ -36,7 +36,7 @@
                         script Vista/paginaSegura.php si los datos ingresados se corresponden con un usuario/pass
                         registrados. Caso contrario se redirecciona nuevamente al script Vista/login.php</p>
                     
-                    <a name="boton" id="boton" class="btn btn-primary" href="./verificarLogin.php" role="button">Ir</a>
+                    <a name="boton" id="boton" class="btn btn-primary" href="./login.php" role="button">Logear</a>
                     
                 </div>
             </div>
