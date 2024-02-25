@@ -1,13 +1,14 @@
 <?php
 //para q siempre compruebe si hay una sesion abierta
 
-include_once '../../config/configuration.php';
+include_once '../../config/configuracion.php';
 //! ACA NO FUNCIONA
+//echo "1";
 $session = new Session();
-
-if ($session->validar()) {
-    header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
-}
+//echo "2";
+// if ($session->validar()) {
+//     header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
+// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,7 +34,7 @@ if ($session->validar()) {
                 <div class="d-flex justify-content-center m-3">
                     <h2 class="text-center">Member Login</h2>
                 </div>
-                    <form class="form " action="./accion/verificarPass.php" method="post" novalidate>
+                    <form class="form " action="./accion/verificarLogin.php" method="post" novalidate>
                         <div>
                             <input class="col-12 form-control" type="text" id="usuario" name="usuario" placeholder="Username" required>
                             <div class="invalid-feedback">Ingrese usuario</div>

@@ -1,11 +1,10 @@
 <?php
-include_once '../../../config/configuration.php';
-
+include_once '../../../config/configuracion.php';
 $data = data_submitted();
-
+// verEstructura($data);
 if (!empty($data)) {
     $usuario = $data['usuario'];
-    $pass = $data['pass'];
+    $pass = $data['clave'];
 
     $session = new Session();
     $sesionActiva = $session->activa();
