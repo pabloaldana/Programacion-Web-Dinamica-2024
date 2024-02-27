@@ -25,7 +25,7 @@
             persona es mayor de edad o no; (si la edad es mayor o igual a 18).
             Enviar los datos usando el método GET y luego probar de modificar los datos
             directamente en la url para ver los dos posibles mensajes.</p>
-            <form class="form" action="./accion/accion4.php" method="get" novalidate>
+            <form class="form" action="./accion/accion6.php" method="get" novalidate>
 
                 <div class="row">
                     <div class= "col">

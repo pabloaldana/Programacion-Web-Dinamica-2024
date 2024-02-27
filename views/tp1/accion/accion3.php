@@ -28,7 +28,7 @@
                 Resultado
             </div>
             <div class="card-body">
-                <p class="card-text">El total de horas semanales de la materia es de <?php echo $res ?> horas. </p>
+                <p class="card-text"> <?php echo $resp ?> </p>
                 <a href="../ej3.php" name="send" id="send" value="voler" class="btn btn-primary">Volver</a>
             </div>
         </div>

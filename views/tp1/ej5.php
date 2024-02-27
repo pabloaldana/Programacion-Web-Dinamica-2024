@@ -24,7 +24,7 @@
                 estudios primarios, 3-estudios secundarios. Agregar el componente que crea más
                 apropiado para solicitar el sexo. En la página que procesa el formulario mostrar además
                 un mensaje que indique el tipo de estudios que posee y su sexo.</p>
-            <form class="form" action="./accion/accion4.php" method="get" novalidate>
+            <form class="form" action="./accion/accion5.php" method="get" novalidate>
 
                 <div class="row">
                     <div class= "col">

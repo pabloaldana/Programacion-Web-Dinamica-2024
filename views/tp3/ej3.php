@@ -11,31 +11,34 @@
 
     <?php include_once '../structures/header.php';?>
 
-    <div class="container py-5 texte-center mt-5 mb-5" style="border: 2px solid red;">
-        <h4>Ejercicio Nro 4</h4>
-        <p>
-            Diseñar un formulario que permita cargar las películas de la empresa Cinem@s. La lista géneros
-            tiene los siguientes datos: Comedia, Drama, Terror, Románticas, Suspenso, Otras.
-            Aplicar Bootstrap y validar los siguiente:</br>
-            -El año debe ser un campo que debe permitir ingresar como máximo 4 caracteres y solo aceptar números.</br>
-            -El campo duración debe permitir un máximo de 3 números.</br>
-            -Todos los datos son obligatorios</br>
-            -Al hacer click en el botón “Enviar”, se deberán mostrar todos los datos ingresados en el
-            formulario.</br>
-            -El botón “Borrar” debe limpiar el formulario.
-        </p>
-        <!-- Formulario -->
-        <div class="container ">
-            <nav class="navbar navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                  Cinem@as
-                </a>
-              </div>
-            </nav>
-            <div>
-                <form class="form" action="./accion/subirPortada.php" enctype="multipart/form-data" method="post" novalidate>
+    <body class="mb-5">
+    <div class="container" style="heigth: 700px;">
+        <div class="card text-center">
+            <div class="card-header">
+                Trabajo Practico Nro 3
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 3</h5>
+                <p class="card-text">
+                Agregue al formulario creado en el ejercicio 10 del práctico 2 un input file que les
+                permita adjuntar la imagen de película que se está cargando. Cuando se envía el formulario se
+                deberá guardar la imagen y luego mostrarla junto con la información cargada en el formulario.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" style="width:80%">
+        <div class="card text-dark mb-3 w-100 h-100">
+            <div class="card-header text-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                        Cinem@as
+                    </a>
+                </div>
+            </div>
+            <div class="card-body" style="backround-color:white">
+            <form class="form" action="./accion/subirPortada.php" method="post" novalidate>
                     <div class="row mb-4">
                         <div class="col">
                             <h5>Titulo</h5>
@@ -126,13 +129,11 @@
                         <textarea name="sinopsis" id="sinopsis" cols="30" rows="4" class="form-control" required></textarea>
                         <div class="invalid-feedback">Ingrese sinopsis</div>
                     </div> 
-
                     <div class="row mb-4">
                         <h5>Seleccione portada de la pelicula</h5>
                         <input class="form-control" type="file" id="miArchivo" name="miArchivo" required>
                         <small id="miniaturaHelp" class="form-text text-muted">formatos permitidos: png, jpg y jpeg</small>
                     </div>
-
                     <div class="d-flex justify-content-end">
                         <button type="submint" class="btn btn-primary">Enviar</button>
                         <button type="reset" class="btn btn-light ms-2" style="border: 1px solid grey">Borrar</button>
@@ -141,12 +142,13 @@
                 </form>
             </div>
         </div>
-        
+    </div>
+    </body>     
        
 
     </div>
     
-    <script src="./js/controlCamposVacios.js"></script>
+    <script src="./js/validacionCine.js"></script>
     <?php include_once '../structures/footer.php'; ?>
 
 

@@ -48,12 +48,14 @@
             $apellido = $datos['apellido'];
             $edad = $datos ['edad'];
             $direccion = $datos ['direccion'];
+            $estudios = $datos['estudios'];
+            $sexo = $datos['selectSexo'];
             if ($edad>=18)
                 $legal="mayor de edad";
             else
                 $legal = "menor de edad";
 
-            return "Hola, yo soy $nombre , $apellido tengo $edad años, vivo en $direccion y soy $legal";
+            return "Hola, soy $sexo y me llamo $nombre , $apellido tengo $edad años, vivo en $direccion y soy $legal. $estudios";
         }
         public function ejercicio6 ($datos){
             $legal="";
