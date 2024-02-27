@@ -11,8 +11,8 @@
     <?php include_once '../structures/header.php';?>
 
     <div class="container">
-        <div class  ="row  mt-2">
-            <div class="card col">
+    <div class = "row mt-2">
+<div class="card col">
                 <div class="card-header">
                     Ejercicio 1
                 </div>
@@ -39,7 +39,9 @@
                     <a href="buscarAuto.php" class="btn btn-primary">Ir a pagina</a>
                 </div>
             </div>
-            <div class="card col">
+</div>
+<div class = "row mt-2 ">
+<div class="card col">
                 <div class="card-header">
                     Ejercicio 3
                 </div>
@@ -51,8 +53,6 @@
                     <a href="listaPersonas.php" class="btn btn-primary">Ir a pagina</a>
                 </div>
             </div>
-        </div>
-        <div class="row mt-2    ">
             <div class="card col">
                 <div class="card-header">Ejercicio 4</div>
                 <div class="card-body">
@@ -64,7 +64,9 @@
                     <a href="nuevaPersona.php" class="btn btn-primary">Ir a pagina</a>
                 </div>
             </div>
-            <div class="card col">
+</div>
+<div class = "row mt-2 ">
+<div class="card col">
                 <div class="card-header">
                     Ejercicio 5
                 </div>
@@ -93,9 +95,9 @@
                     <a href="cambioDuenio.php" class="btn btn-primary">Ir a pagina</a>
                 </div>
             </div>
-        </div>
-        <div class="row mt-2 w-50">
-            <div class="card col">
+</div>
+<div class = "row mt-2 ">
+<div class="card col">
                 <div class="card-header">
                     Ejercicio 7
                 </div>
@@ -110,10 +112,14 @@
                     <a href="buscarPersona.php" class="btn btn-primary">Ir a pagina</a>
                 </div>
             </div>
-        </div>
+  
+</div>
+        
        
     
     </div>
 
     <?php include_once '../structures/footer.php';?>
 </html>
+
+

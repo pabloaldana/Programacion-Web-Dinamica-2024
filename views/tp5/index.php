@@ -12,7 +12,7 @@
         <?php include_once '../structures/header.php';?>
         
         <div class = "container" style= "width: 700px">
-            <div class="card text-center">
+            <div class="card text-center mb-3 mt-3">
                 <div class="card-header">
                     Trabajo Practico Nro 5
                 </div>
