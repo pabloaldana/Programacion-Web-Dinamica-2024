@@ -3,7 +3,7 @@
 
 include_once '../../../config/configuracion.php';
 $datos = data_submitted();
-verEstructura($datos);
+//verEstructura($datos);
 $obj_control = new Tp1_controller();
 
 if (!empty($datos)) {
