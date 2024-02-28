@@ -8,7 +8,6 @@ $obj_control = new Tp1_controller();
 
 if (!empty($datos)) {
     $resp = $obj_control->ejercicio8($datos);
-    echo $resp;
 }
 
 ?>
