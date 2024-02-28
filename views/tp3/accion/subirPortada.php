@@ -22,12 +22,10 @@
     
     if($_FILES['miArchivo']['error'] <= 0){
         $nombre = $_FILES["miArchivo"]["name"];
-        echo "nombre: ".$nombre;
         $rutaTemporal = $_FILES["miArchivo"]["tmp_name"];
         $respuesta = $obj_tp3->subirPortada($nombre,$rutaTemporal);
     }
     
-
 ?>
 
 <!DOCTYPE html>

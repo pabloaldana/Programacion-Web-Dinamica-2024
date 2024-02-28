@@ -45,7 +45,6 @@
 
         public function subirPortada($nombre,$carpetaTemporal){
             $inf_archivo = pathinfo($nombre);
-            echo $nombre;
             $extensionDeArchivo = $inf_archivo['extension'];
             if (in_array($extensionDeArchivo,$this->EXTENSION_IMG)){
                 $ubicacion = $this->CARPETA . $nombre;
