@@ -5,7 +5,7 @@
     $obj_tp3 = new Tp3_controller();
     $dir = __DIR__.'/../cargas/';
     $datos = data_submitted();
-    
+
     $titulo = $datos['titulo'];
     $actores = $datos['actores'];
     $director = $datos['director'];
@@ -17,10 +17,12 @@
     $duracion = $datos['duracion'];
     $restriccion = $datos['restriccion'];
     $sinopsis = $datos['sinopsis'];
+
+
     
     if($_FILES['miArchivo']['error'] <= 0){
-       
         $nombre = $_FILES["miArchivo"]["name"];
+        echo "nombre: ".$nombre;
         $rutaTemporal = $_FILES["miArchivo"]["tmp_name"];
         $respuesta = $obj_tp3->subirPortada($nombre,$rutaTemporal);
     }

@@ -11,3 +11,4 @@
 
 <script type="text/javascript" src='<?php echo $PRINCIPAL ?>/views/js/bootstrap.bundle.min.js'></script>
 <script type="text/javascript" src='<?php echo $PRINCIPAL ?>/views/js/jquery-3.7.1.min.js'></script>
+

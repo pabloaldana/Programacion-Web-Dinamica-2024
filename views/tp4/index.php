@@ -10,7 +10,7 @@
 
     <?php include_once '../structures/header.php';?>
 
-    <div class="container">
+    <div class="container mb-5">
     <div class = "row mt-2">
 <div class="card col">
                 <div class="card-header">
