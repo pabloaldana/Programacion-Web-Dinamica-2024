@@ -45,7 +45,7 @@
                     </a>
                 </div>
             </div>
-            <div class="card-body" style="backround-color:white">
+            <div class="card-body" style="background-color:white">
                 <form class="form" action="./accion/accion4.php" method="post" novalidate>
                     <div class="row mb-4">
                         <div class="col">
