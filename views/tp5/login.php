@@ -2,7 +2,7 @@
 //para q siempre compruebe si hay una sesion abierta
 
 include_once '../../config/configuracion.php';
-//! ACA NO FUNCIONA
+
 $session = new Session();
 if ($session->validar()) {
     header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
