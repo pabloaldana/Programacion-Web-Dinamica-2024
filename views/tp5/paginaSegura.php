@@ -20,11 +20,9 @@
             <div class="card-body">
                 <h5 class="card-title">Ejercicio 1</h5>
                 <p class="card-text">
-                    Confeccionar un formulario que solicite un número. Al pulsar el botón de enviar debe
-                    llamar a un script –vernumero.php- y visualizar un mensaje que indique si el número
-                    enviado fue: positivo, cero o negativo. Añadir un link, a la página que visualiza la
-                    respuesta, que permita volver a la página anterior.</p>
+                    Usuario Logeado Correctamente</p>
             </div>
+            <a class="btn btn-danger col-12" href="./accion/cerrarSesion.php">Cerrar</a>
         </div>
     </div>
 

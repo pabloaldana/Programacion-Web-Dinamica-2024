@@ -12,9 +12,9 @@ if (!empty($data)) {
     if ($sesionActiva) {
         $resp = $session->iniciar($usuario, $pass);
         if ($resp) {
-            echo "sesion activa";
+            header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
         } else {
-            echo "sesion inactiva";
+            header('Location: ' . $PRINCIPAL . "/views/tp5/login.php");
         }
     } else {
         echo "ERROR:: sesion inactiva";

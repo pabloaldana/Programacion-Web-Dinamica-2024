@@ -1,9 +1,6 @@
 <?php
-include_once '../../../config/configuration.php';
-
-
-
+include_once '../../../config/configuracion.php';
 $session = new Session();
 $session->cerrar();
 
-header('Location: ' . $PRINCIPAL . "/views/tp5_views/login.php");
+header('Location: ' . $PRINCIPAL . "/views/tp5/login.php");

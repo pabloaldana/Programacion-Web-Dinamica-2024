@@ -13,8 +13,8 @@
 <?php include_once '../structures/header.php'; ?>
 
 <body class="mb-5">
-    <div class="container" style="heigth: 700px;">
-        <div class="card text-center">
+    <div class="container">
+        <div class=" card text-center">
             <div class="card-header">
                 Trabajo Practico Nro 2
             </div>

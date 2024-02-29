@@ -60,15 +60,10 @@ class AbmUsuario
      */
     public function modificacion($param)
     {
-        echo "modificacion de abmUsuario 1 <br/>";
         $resp = false;
-        echo "modificacion de abmUsuario 2 <br/>";
         if ($this->seteadosCamposClaves($param)) {
-            echo "modificacion de abmUsuario 3 <br/>";
             $personObject = $this->cargarObjeto($param);
-            echo "modificacion de abmUsuario 4 <br/>";
             if ($personObject != null and $personObject->modificar()) {
-                echo "modificacion de abmUsuario 5 <br/>";
                 $resp = true;
             }
         }

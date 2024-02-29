@@ -68,7 +68,7 @@ if (!empty($datos)) {
             </div>
             <div class="card-body">
                 <p class="card-text">' . $noAuto . '</p>
-                <a href="../ej2.php" name="send" id="send" value="volver" class="btn btn-primary">Volver</a>
+                <a href="../index.php" name="send" id="send" value="volver" class="btn btn-primary">Volver</a>
             </div>
         </div>
     </div>';

@@ -5,8 +5,13 @@ $(document).ready(function () {
 
   // Manejador de evento para el evento de envío del formulario
   form.on("submit", function (event) {
+    if (!this.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     //validacion para que la duracion no tenga mas de 3 digitos
     const duracion = $("#duracion").val();
+    console.log(duracion);
     if (duracion.length > 3) {
       event.preventDefault();
       $("#error-long").text(
@@ -22,23 +27,15 @@ $(document).ready(function () {
     var añoActual = fechaActual.getFullYear();
 
     //!CORREGIR PORQUE NO SE BORRA CUANDO CAMBIO  AUN AÑO CORRECTO
-    if (anio.length > 4 || isNaN(anio)) {
-      event.preventDefault();
-      $("#error-anio").text("El año tiene 5 digitos");
-      $("#error-anio").css({ color: "red", "font-size": "14px" });
+    if (parseInt(anio) <= añoActual) {
+      $("#error-anio").text("");
     } else {
-      if (parseInt(anio) <= añoActual) $("#error-anio").text("");
-      else {
-        $("#error-anio").text("El año es mayor al trasncurrido");
-        $("#error-anio").css({ color: "red", "font-size": "14px" });
-      }
+      event.preventDefault();
+      $("#error-anio").text("El año es mayor al trasncurrido");
+      $("#error-anio").css({ color: "red", "font-size": "14px" });
     }
 
     //validacion para que los campos no esten vacios
-    if (!this.checkValidity()) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
 
     $(this).addClass("was-validated");
   });

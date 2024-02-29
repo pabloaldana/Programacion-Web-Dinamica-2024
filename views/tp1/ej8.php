@@ -28,7 +28,7 @@
                     formulario que solicite la edad y permita ingresar si se trata de un estudiante o no. Con
                     un botón enviar los datos a un script encargado de realizar el cálculo y visualizarlo.
                     Agregar un botón para limpiar el formulario y volver a consultar.</p>
-                <form class="form" action="./accion/accion8.php" method="post" novalidate>
+                <form class="form" action="./accion/accion8.php" method="post">
                     <div class="row">
                         <div class="col">
                             <label for="diaSemana">Edad: </label>
@@ -40,16 +40,12 @@
 
                         <div class="mb-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="Sin estudios">
+                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio1" value="Sin estudios" checked>
                                 <label class="form-check-label" for="inlineRadio1">Sin estudios</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="estudios" id="inlineRadio2" value="Estudios Primarios">
-                                <label class="form-check-label" for="inlineRadio2">Estudio primario</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="estudios" id="inlineRadio3" value="Estudios Secundarios">
-                                <label class="form-check-label" for="inlineRadio3">Estudio secundario</label>
+                                <label class="form-check-label" for="inlineRadio2">Con estudios</label>
                             </div>
                         </div>
                     </div>

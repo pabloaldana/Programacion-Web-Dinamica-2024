@@ -3,12 +3,10 @@
 
 include_once '../../config/configuracion.php';
 //! ACA NO FUNCIONA
-//echo "1";
 $session = new Session();
-//echo "2";
-// if ($session->validar()) {
-//     header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
-// }
+if ($session->validar()) {
+    header('Location: ' . $PRINCIPAL . "/views/tp5/paginaSegura.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

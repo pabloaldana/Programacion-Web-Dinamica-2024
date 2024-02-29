@@ -13,7 +13,7 @@
 <?php include_once '../structures/header.php'; ?>
 
 <body class="mb-5">
-    <div class="container" style="heigth: 700px;">
+    <div class="container">
         <div class="card text-center">
             <div class="card-header">
                 Trabajo Practico Nro 3
@@ -36,7 +36,7 @@
                     <h3>Cinem@as</h3>
                 </div>
             </div>
-            <div class="card-body" style="backround-color:white">
+            <div class="card-body" style="background-color:white">
                 <form class="form" action="./accion/subirPortada.php" method="post" novalidate enctype="multipart/form-data">
                     <div class="row mb-4">
                         <div class="col">
@@ -91,6 +91,7 @@
                                     <option value="Terror">Terror</option>
                                     <option value="Romantica">Romantica</option>
                                     <option value="Suspenso">Suspenso</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                                 <div class="invalid-feedback">Seleccione uno</div>
                             </div>
