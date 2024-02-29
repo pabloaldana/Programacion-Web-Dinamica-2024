@@ -1,44 +1,71 @@
 <?php
-    include_once '../../../config/configuracion.php';
-    $datos = data_submitted();
+include_once '../../../config/configuracion.php';
+$datos = data_submitted();
+//verEstructura($datos);
 
-    //verEstructura($datos);
+$objPersona = new AbmPersona();
+$resp = false;
+$exitePersona = false;
 
-    $objPersona = new AbmPersona();
-    $resp=false;
-    
-    if(!empty($datos)){
-        if($objPersona ->alta( $datos )) 
+if (!empty($datos)) {
+
+    $dniPersona = $datos['dni'];
+    $parametroPersona = array('dni' => $dniPersona);
+    $persona = $objPersona->buscar($parametroPersona);
+
+    if ($persona) {
+        $exitePersona = true;
+    } else {
+        if ($objPersona->alta($datos))
             $resp = true;
-    }       
-    
+    }
+}
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <?php
-            $title = 'TP4 Ejercicio';
-            include_once '../../../config/configuracion.php';
-            include_once '../../structures/head.php'
-        ?>
-    </head>
+<html lang="en">
 
-    <?php include_once '../../structures/header.php';?>
+<head>
+    <?php
+    $title = 'TP4 Ejercicio';
+    include_once '../../../config/configuracion.php';
+    include_once '../../structures/head.php'
+    ?>
+</head>
 
-    <div class="container">
-        <div class="card mb-3" style="width: 18rem;">
-            <?php 
-                if  ($resp) {                        
-                    echo '<div class="alert alert-success text-center" role="alert">¡Registro realizado con éxito!</div>';
-                    echo "<h5 class='text-center text-success'>¡Registro guardado correctamente!</h5>";
-                } else{
-                    echo "<h5 class='text-center mb-4'>Error al guardar el registro.</h5>";
-                }
-            ?>
-        </div>
-    </div>
+<?php include_once '../../structures/header.php'; ?>
 
-    <?php include_once '../../structures/footer.php'; ?>
+<div class="container">
+
+    <?php
+    if ($exitePersona) {
+        echo '<div class="card mx-auto mb-3" style="width: 400px;">
+            <div class="card-body" style="width:300px">
+                <p class="card-text">La persona ya se encuentra cargada en la base de datos</p>
+                <a href="./../index.php" class="btn btn-primary">Inicio</a>
+            </div>
+            </div>';
+    } else {
+        if ($resp) {
+            echo '<div class="card mx-auto mb-3" style="width: 400px;">
+                <div class="card-body" style="width:300px">
+                <p class="card-text">Registro realizado con exito</p>
+                <a href="./../index.php" class="btn btn-primary">Inicio</a>
+                </div>
+                </div>';
+        } else {
+            echo '<div class="card mx-auto mb-3" style="width: 400px;">
+                <div class="card-body" style="width:300px">
+                    <p class="card-text">Error al guardar el registro</p>
+                    <a href="./../index.php" class="btn btn-primary">Inicio</a>
+                </div>
+            </div>';
+        }
+    }
+    ?>
+
+</div>
+
+<?php include_once '../../structures/footer.php'; ?>
 
 </html>

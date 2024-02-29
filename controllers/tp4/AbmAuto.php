@@ -1,49 +1,48 @@
 <?php
-class AbmAuto{
+class AbmAuto
+{
     //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
 
-    
+
     /**
      * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
      * @param array $param
      * @return Auto
      */
-    private function cargarObjeto($param){
-    
+    private function cargarObjeto($param)
+    {
+
         $objAuto = null;
-        if( array_key_exists('patente',$param)){ //complear con todos los parametros
+        if (array_key_exists('patente', $param)) { //complear con todos los parametros
             $objAuto = new Auto();
             $persona = new Persona();
-            
+
             $persona->setNroDni($param['dniDuenio']);
             $persona->cargar();
             $objAuto->setear(
-                $param['patente'], 
+                $param['patente'],
                 $param['marca'],
                 $param['modelo'],
                 $persona,
             );
-            
         }
-        verEstructura($objAuto);
         return $objAuto;
-
     }
-        
-        
-     /**
+
+
+    /**
      * permite modificar un objeto
      * @param array $param
      * @return boolean
      */
-    public function modificacion($param){
+    public function modificacion($param)
+    {
         $resp = false;
-        if ($this->seteadosCamposClaves($param)){
+        if ($this->seteadosCamposClaves($param)) {
             $objAuto = $this->cargarObjeto($param);
-            //echo "estructura en modificacion";
-            //verEstructura($objAuto);
-            if ($objAuto!= null and $objAuto->modificar()){
-                $resp=true;
+
+            if ($objAuto != null and $objAuto->modificar()) {
+                $resp = true;
             }
         }
         return $resp;
@@ -53,54 +52,52 @@ class AbmAuto{
      * @param array $param
      * @return boolean
      */
-    
-    private function seteadosCamposClaves($param){
+
+    private function seteadosCamposClaves($param)
+    {
         $resp = false;
         if (isset($param['patente']))
             $resp = true;
         return $resp;
     }
-    
+
     /**
      * 
      * @param array $param
      */
-    public function alta($param){
- 
+    public function alta($param)
+    {
+
         $resp = false;
         $objtAuto = $this->cargarObjeto($param);
-        echo "alta de abmAuto";
-        if ($objtAuto!=null and $objtAuto->insertar()){
+        if ($objtAuto != null and $objtAuto->insertar()) {
             $resp = true;
         }
         return $resp;
-        
-    }    
-   
-    
+    }
+
+
     /**
      * permite buscar un objeto
      * @param array $param
      * @return boolean
      */
-    public function buscar($param){
+    public function buscar($param)
+    {
         $where = "";
-        if ($param !== NULL){
-            if  (isset($param['Patente']))
-                $where =" Patente ='".$param['Patente'] . "'";
-            if  (isset($param['marca']))
-            $where =" Marca ='".$param['Marca'] . "'";
-            if  (isset($param['modelo']))
-            $where =" Modelo ='".$param['Modelo'] . "'";
-            if  (isset($param['DniDuenio']))
-            $where =" DniDuenio ='".$param['DniDuenio'] . "'";
+        if ($param !== NULL) {
+            if (isset($param['Patente']))
+                $where = " Patente ='" . $param['Patente'] . "'";
+            if (isset($param['marca']))
+                $where = " Marca ='" . $param['Marca'] . "'";
+            if (isset($param['modelo']))
+                $where = " Modelo ='" . $param['Modelo'] . "'";
+            if (isset($param['DniDuenio']))
+                $where = " DniDuenio ='" . $param['DniDuenio'] . "'";
         }
 
-        $arreglo = Auto::listar($where); 
+        $arreglo = Auto::listar($where);
 
-        return $arreglo;   
-        
+        return $arreglo;
     }
-    
 }
-?>
