@@ -60,13 +60,15 @@ class AbmUsuario
      */
     public function modificacion($param)
     {
+        echo "modificacion de abmUsuario 1 <br/>";
         $resp = false;
-     
+        echo "modificacion de abmUsuario 2 <br/>";
         if ($this->seteadosCamposClaves($param)) {
-            
+            echo "modificacion de abmUsuario 3 <br/>";
             $personObject = $this->cargarObjeto($param);
-
+            echo "modificacion de abmUsuario 4 <br/>";
             if ($personObject != null and $personObject->modificar()) {
+                echo "modificacion de abmUsuario 5 <br/>";
                 $resp = true;
             }
         }
@@ -103,12 +105,11 @@ class AbmUsuario
         $resp = false;
         if ($this->seteadosCamposClaves($param)) {
             $objPersona = $this->cargarObjetoConClave($param);
-            verEstructura($objPersona);
             if ($objPersona != null and $objPersona->deshabilitar()) {
                 $resp = true;
             }
         }
-        //hasta aca llega bien
+
         return $resp;
     }
 }

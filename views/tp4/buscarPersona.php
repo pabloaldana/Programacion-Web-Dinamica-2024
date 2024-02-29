@@ -17,7 +17,7 @@
         <div class="card-body">
             <p class="card-text">Ingrese el dni de la persona que esta buscando</p>
             <form action="./accion/accionBuscarPersona.php" method="post" id="form" name="form" class="form" novalidate>
-                <input type="text" class="form-control mb-3" id="dni" name="dni" placeholder="DNI" required>
+                <input type="text" class="form-control mb-3            verEstructura($objPersona);" id="dni" name="dni" placeholder="DNI" required>
                 <div class="invalid-feedback mb-3">Ingresar el numero de dni</div>
                 <button class="btn btn-primary" type="submit">Buscar</button>
             </form>
